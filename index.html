@@ -1,0 +1,1983 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Southern Enterprise IT Solution & Cybersecurity Partner</title>
+    <meta name="description" content="Enterprise-grade IT infrastructure, cybersecurity, server leasing, network equipment rental, and managed MA services for organizations in Southern Thailand.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+Thai:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            950: '#020617',
+                            900: '#0a1628',
+                            800: '#0f1f3d',
+                            700: '#1a2d55',
+                            600: '#253d70',
+                        },
+                        accent: {
+                            cyan: '#00e5ff',
+                            blue: '#3b82f6',
+                            indigo: '#6366f1',
+                            emerald: '#10b981',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans Thai', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-slow': 'float 8s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'shimmer': 'shimmer 2.5s linear infinite',
+                        'rotate-slow': 'rotateSlow 20s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-12px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: '0.4' },
+                            '50%': { opacity: '0.8' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% 0' },
+                            '100%': { backgroundPosition: '200% 0' },
+                        },
+                        rotateSlow: {
+                            '0%': { transform: 'rotate(0deg)' },
+                            '100%': { transform: 'rotate(360deg)' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Premium Custom CSS -->
+    <style>
+        * { box-sizing: border-box; }
+        
+        body {
+            background-color: #020617;
+            color: #ffffff;
+            overflow-x: hidden;
+            font-family: 'Inter', 'Noto Sans Thai', sans-serif;
+        }
+        
+        /* Premium Glassmorphism */
+        .glass {
+            background: rgba(10, 22, 40, 0.45);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        
+        .glass-card {
+            background: linear-gradient(135deg, rgba(10, 22, 40, 0.5) 0%, rgba(15, 31, 61, 0.3) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .glass-card:hover {
+            background: linear-gradient(135deg, rgba(10, 22, 40, 0.7) 0%, rgba(15, 31, 61, 0.5) 100%);
+            border-color: rgba(0, 229, 255, 0.2);
+            box-shadow: 0 20px 60px -20px rgba(0, 229, 255, 0.15), inset 0 1px 0 rgba(255,255,255,0.05);
+            transform: translateY(-6px);
+        }
+        
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, #00e5ff 0%, #3b82f6 50%, #6366f1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Shimmer line */
+        .shimmer-line {
+            background: linear-gradient(90deg, transparent, rgba(0,229,255,0.3), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 2.5s linear infinite;
+        }
+        
+        /* Glow effects */
+        .glow-cyan { box-shadow: 0 0 30px rgba(0, 229, 255, 0.12); }
+        .glow-cyan-strong { box-shadow: 0 0 40px rgba(0, 229, 255, 0.2); }
+        .text-glow { text-shadow: 0 0 20px rgba(0, 229, 255, 0.4); }
+        
+        /* Background patterns */
+        .bg-grid {
+            background-size: 50px 50px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+        }
+        
+        .bg-dots {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        
+        /* Ambient orbs */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            pointer-events: none;
+            will-change: transform;
+        }
+        .orb-cyan {
+            background: radial-gradient(circle, rgba(0, 229, 255, 0.08) 0%, transparent 70%);
+        }
+        .orb-blue {
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.06) 0%, transparent 70%);
+        }
+        .orb-indigo {
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.05) 0%, transparent 70%);
+        }
+        
+        /* Image overlays */
+        .img-overlay {
+            position: relative;
+            overflow: hidden;
+        }
+        .img-overlay::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(2,6,23,0) 0%, rgba(2,6,23,0.3) 50%, rgba(2,6,23,0.85) 100%);
+            pointer-events: none;
+        }
+        
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: rgba(0, 229, 255, 0.15); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(0, 229, 255, 0.4); }
+        
+        /* Section dividers */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.15), transparent);
+        }
+        
+        /* Risk indicator bar */
+        .risk-bar {
+            height: 3px;
+            background: linear-gradient(90deg, #ef4444, #f97316, #ef4444);
+            animation: shimmer 3s linear infinite;
+            background-size: 200% 100%;
+        }
+        
+        /* Protection bar */
+        .protect-bar {
+            height: 3px;
+            background: linear-gradient(90deg, #00e5ff, #3b82f6, #00e5ff);
+            animation: shimmer 3s linear infinite;
+            background-size: 200% 100%;
+        }
+        
+        /* Floating badge */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        
+        /* Premium button styles */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, #00e5ff 0%, #3b82f6 100%);
+            color: #020617;
+            font-weight: 800;
+            border-radius: 14px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 229, 255, 0.2);
+            text-decoration: none;
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 229, 255, 0.35);
+        }
+        
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 16px 32px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+            font-weight: 700;
+            border-radius: 14px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(0, 229, 255, 0.3);
+            transform: translateY(-3px);
+        }
+        
+        /* Counter animation styles */
+        .counter { font-variant-numeric: tabular-nums; }
+        
+        /* Image shine effect */
+        .img-shine {
+            position: relative;
+            overflow: hidden;
+        }
+        .img-shine::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.03) 50%, transparent 60%);
+            animation: shimmer 4s ease-in-out infinite;
+            background-size: 200% 200%;
+            pointer-events: none;
+            z-index: 2;
+        }
+        
+        /* Responsive image containers */
+        .hero-image-container {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 229, 255, 0.05);
+        }
+        .hero-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 8s ease;
+        }
+        .hero-image-container:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Mobile menu */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="bg-navy-950 text-white select-none relative">
+
+    <!-- Ambient Orbs -->
+    <div class="orb orb-cyan w-[600px] h-[600px] top-20 -left-40 animate-float"></div>
+    <div class="orb orb-blue w-[800px] h-[800px] top-[60vh] -right-60 animate-float-slow"></div>
+    <div class="orb orb-indigo w-[500px] h-[500px] top-[120vh] left-20 animate-float"></div>
+    <div class="orb orb-cyan w-[400px] h-[400px] top-[200vh] right-10 animate-float-slow"></div>
+    
+    <!-- Grid Background -->
+    <div class="fixed inset-0 bg-grid pointer-events-none z-0 opacity-60"></div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- HEADER / NAVIGATION -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <a href="#home" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-accent-cyan via-accent-blue to-accent-indigo flex items-center justify-center shadow-lg glow-cyan transition-all group-hover:scale-105">
+                    <i data-lucide="shield" class="w-5 h-5 text-white stroke-[2.5]"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-black text-lg tracking-tight text-white group-hover:text-accent-cyan transition-colors">
+                        SOUTHERN ENTERPRISE
+                    </span>
+                    <span class="text-[9px] text-white/40 tracking-[0.2em] font-bold" data-t="nav.brandSubtitle">
+                        IT & CYBERSECURITY PARTNER
+                    </span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-1">
+                <a href="#home" class="px-4 py-2 text-sm font-medium text-white/70 hover:text-accent-cyan hover:bg-white/5 rounded-lg transition-all" data-t="nav.home">Home</a>
+                <a href="#what-we-solve" class="px-4 py-2 text-sm font-medium text-white/70 hover:text-accent-cyan hover:bg-white/5 rounded-lg transition-all" data-t="nav.whatWeSolve">What We Solve</a>
+                <a href="#cost-matrix" class="px-4 py-2 text-sm font-medium text-white/70 hover:text-accent-cyan hover:bg-white/5 rounded-lg transition-all" data-t="nav.costMatrix">Risk Analysis</a>
+                <a href="#solutions" class="px-4 py-2 text-sm font-medium text-white/70 hover:text-accent-cyan hover:bg-white/5 rounded-lg transition-all" data-t="nav.solutions">Solutions</a>
+                <a href="#partner" class="px-4 py-2 text-sm font-medium text-white/70 hover:text-accent-cyan hover:bg-white/5 rounded-lg transition-all" data-t="nav.partner">Partner Solutions</a>
+                <a href="#why-us" class="px-4 py-2 text-sm font-medium text-white/70 hover:text-accent-cyan hover:bg-white/5 rounded-lg transition-all" data-t="nav.whyUs">Why Us</a>
+            </nav>
+
+            <!-- Right Side -->
+            <div class="flex items-center gap-3">
+                <!-- Language Toggle -->
+                <button onclick="toggleLang()" class="flex items-center gap-2 px-4 py-2 rounded-xl border border-white/10 hover:border-accent-cyan/40 hover:bg-white/5 transition-all text-xs font-bold group">
+                    <i data-lucide="globe" class="w-3.5 h-3.5 text-accent-cyan group-hover:rotate-12 transition-transform"></i>
+                    <span id="lang-btn-text" class="text-white/80">EN</span>
+                </button>
+
+                <!-- CTA Button -->
+                <a href="#contact" class="hidden sm:flex items-center gap-2 bg-gradient-to-r from-accent-cyan to-accent-blue hover:shadow-lg hover:shadow-accent-cyan/20 text-navy-950 font-bold px-6 py-2.5 rounded-xl text-sm transition-all hover:-translate-y-0.5">
+                    <i data-lucide="phone" class="w-4 h-4"></i>
+                    <span data-t="nav.requestConsult">Request Consultation</span>
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button onclick="toggleMobileMenu()" class="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg border border-white/10 hover:border-accent-cyan/40 transition-all">
+                    <i data-lucide="menu" class="w-5 h-5 text-white/70"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Header bottom line -->
+        <div class="shimmer-line w-full"></div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="mobile-menu fixed inset-0 z-[60] bg-navy-950/98 backdrop-blur-xl flex flex-col items-center justify-center gap-6">
+        <button onclick="toggleMobileMenu()" class="absolute top-6 right-6 w-10 h-10 rounded-lg border border-white/10 flex items-center justify-center">
+            <i data-lucide="x" class="w-5 h-5 text-white/70"></i>
+        </button>
+        <a href="#home" onclick="toggleMobileMenu()" class="text-xl font-bold text-white/80 hover:text-accent-cyan transition-colors" data-t="nav.home">Home</a>
+        <a href="#what-we-solve" onclick="toggleMobileMenu()" class="text-xl font-bold text-white/80 hover:text-accent-cyan transition-colors" data-t="nav.whatWeSolve">What We Solve</a>
+        <a href="#cost-matrix" onclick="toggleMobileMenu()" class="text-xl font-bold text-white/80 hover:text-accent-cyan transition-colors" data-t="nav.costMatrix">Risk Analysis</a>
+        <a href="#solutions" onclick="toggleMobileMenu()" class="text-xl font-bold text-white/80 hover:text-accent-cyan transition-colors" data-t="nav.solutions">Solutions</a>
+        <a href="#partner" onclick="toggleMobileMenu()" class="text-xl font-bold text-white/80 hover:text-accent-cyan transition-colors" data-t="nav.partner">Partner Solutions</a>
+        <a href="#why-us" onclick="toggleMobileMenu()" class="text-xl font-bold text-white/80 hover:text-accent-cyan transition-colors" data-t="nav.whyUs">Why Us</a>
+        <a href="#contact" onclick="toggleMobileMenu()" class="btn-primary mt-4" data-t="nav.requestConsult">Request Consultation</a>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- SECTION 1 — HERO -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section id="home" class="relative min-h-screen pt-32 pb-20 flex items-center overflow-hidden">
+        <canvas id="hero-canvas" class="absolute inset-0 w-full h-full opacity-30 z-10 pointer-events-none"></canvas>
+        
+        <!-- Decorative rotating ring -->
+        <div class="absolute top-1/2 right-0 w-[500px] h-[500px] border border-white/[0.02] rounded-full animate-rotate-slow pointer-events-none -translate-y-1/2 translate-x-1/3 hidden lg:block"></div>
+        <div class="absolute top-1/2 right-10 w-[400px] h-[400px] border border-accent-cyan/[0.03] rounded-full animate-rotate-slow pointer-events-none -translate-y-1/2 hidden lg:block" style="animation-direction:reverse;animation-duration:25s;"></div>
+
+        <div class="relative max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center z-20 w-full">
+            
+            <!-- Hero Text Content -->
+            <div class="lg:col-span-7 flex flex-col gap-7 text-left">
+                <div class="badge bg-accent-cyan/10 border border-accent-cyan/20 text-accent-cyan">
+                    <i data-lucide="radio" class="w-3 h-3 animate-pulse"></i>
+                    <span data-t="hero.tag">ENTERPRISE IT & CYBERSECURITY PARTNER</span>
+                </div>
+
+                <h1 class="text-4xl md:text-5xl lg:text-[3.5rem] font-black tracking-tight text-white leading-[1.1]" id="hero-title">
+                    Protect. Optimize.<br><span class="gradient-text text-glow">Keep Your Business Running.</span>
+                </h1>
+
+                <p class="text-lg md:text-xl text-white/60 max-w-2xl font-normal leading-relaxed" data-t="hero.subtitle">
+                    A single hour of downtime costs up to ฿500,000 in lost revenue and customer trust. Mitigate operational risks with proactive server leasing, network renting, and unified 24/7 MA services.
+                </p>
+
+                <!-- CTAs -->
+                <div class="flex flex-col sm:flex-row gap-4 mt-2">
+                    <a href="#contact" class="btn-primary" data-t="hero.ctaConsult">
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        Request Consultation
+                    </a>
+                    <a href="#contact" class="btn-outline" data-t="hero.ctaSurvey">
+                        <i data-lucide="map-pin" class="w-4 h-4"></i>
+                        Schedule Site Survey
+                    </a>
+                </div>
+
+                <!-- Metrics Row -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 border-t border-white/[0.06] pt-8 mt-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-cyan/10 to-accent-blue/10 flex items-center justify-center border border-accent-cyan/15">
+                            <i data-lucide="shield-check" class="w-5 h-5 text-accent-cyan"></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] text-white/40 font-semibold uppercase tracking-wider" data-t="hero.metrics.uptimeLabel">Uptime Guarantee</p>
+                            <p class="text-base font-bold text-white">99.99%</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-cyan/10 to-accent-blue/10 flex items-center justify-center border border-accent-cyan/15">
+                            <i data-lucide="cpu" class="w-5 h-5 text-accent-cyan"></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] text-white/40 font-semibold uppercase tracking-wider" data-t="hero.metrics.monitoringLabel">Monitoring & Support</p>
+                            <p class="text-base font-bold text-white" data-t="hero.metrics.activeVal">24/7 Proactive MA</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-cyan/10 to-accent-blue/10 flex items-center justify-center border border-accent-cyan/15">
+                            <i data-lucide="network" class="w-5 h-5 text-accent-cyan"></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] text-white/40 font-semibold uppercase tracking-wider" data-t="hero.metrics.regionLabel">Coverage Focus</p>
+                            <p class="text-base font-bold text-white" data-t="hero.metrics.regionVal">Southern Thailand</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Visual -->
+            <div class="lg:col-span-5 relative flex flex-col gap-5">
+                <!-- Main Hero Image - Network Equipment -->
+                <div class="hero-image-container h-52 img-shine relative">
+                    <img src="./images/network_equipment.png" alt="Enterprise Network Infrastructure" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/30 to-transparent z-[3]"></div>
+                    <div class="absolute bottom-4 left-4 z-[4]">
+                        <span class="text-[10px] font-mono bg-accent-cyan/20 border border-accent-cyan/30 px-2.5 py-1 rounded-lg text-accent-cyan font-bold tracking-wider">ENTERPRISE NETWORK</span>
+                    </div>
+                </div>
+
+                <!-- Live Monitor Panel -->
+                <div class="glass rounded-2xl p-6 border border-white/[0.06] glow-cyan w-full relative overflow-hidden">
+                    <!-- Shimmer top line -->
+                    <div class="absolute top-0 left-0 right-0 protect-bar"></div>
+                    
+                    <div class="flex justify-between items-center border-b border-white/[0.06] pb-4 mb-4">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-accent-emerald animate-pulse"></span>
+                            <span class="text-[10px] font-mono text-white/40 tracking-widest">LIVE_SYSTEM_MONITOR</span>
+                        </div>
+                        <span class="text-[10px] font-mono px-2.5 py-1 rounded-lg bg-accent-emerald/10 border border-accent-emerald/20 text-accent-emerald font-bold">ONLINE</span>
+                    </div>
+
+                    <div class="flex flex-col gap-3">
+                        <div class="bg-navy-950/50 border border-white/[0.04] p-3.5 rounded-xl flex items-center justify-between group hover:border-accent-cyan/15 transition-all">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-accent-cyan/10 to-transparent flex items-center justify-center border border-white/[0.06]">
+                                    <i data-lucide="hard-drive" class="w-4 h-4 text-white/50"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-semibold text-white">Core Enterprise Firewall</p>
+                                    <p class="text-[9px] font-mono text-white/30">10.0.1.1</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-[10px] font-bold text-accent-cyan">Secure</p>
+                                <p class="text-[9px] font-mono text-white/30">Load: 12%</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-navy-950/50 border border-white/[0.04] p-3.5 rounded-xl flex items-center justify-between group hover:border-accent-cyan/15 transition-all">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-accent-blue/10 to-transparent flex items-center justify-center border border-white/[0.06]">
+                                    <i data-lucide="server" class="w-4 h-4 text-white/50"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-semibold text-white">Leased Host Cluster</p>
+                                    <p class="text-[9px] font-mono text-white/30">10.0.10.5</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-[10px] font-bold text-accent-emerald">99.99% Up</p>
+                                <p class="text-[9px] font-mono text-white/30">Load: 38%</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-navy-950/50 border border-white/[0.04] p-3.5 rounded-xl flex items-center justify-between group hover:border-accent-cyan/15 transition-all">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-accent-indigo/10 to-transparent flex items-center justify-center border border-white/[0.06]">
+                                    <i data-lucide="shield" class="w-4 h-4 text-white/50"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-semibold text-white">Cloud Backup Node</p>
+                                    <p class="text-[9px] font-mono text-white/30">10.2.1.200</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-[10px] font-bold text-accent-cyan">Encrypted</p>
+                                <p class="text-[9px] font-mono text-white/30">Sync: OK</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- SECTION 2 — WHAT WE SOLVE -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section id="what-we-solve" class="py-28 relative overflow-hidden">
+        <div class="absolute inset-0 bg-dots opacity-40 pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            
+            <!-- Section Header with Image -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+                <div>
+                    <div class="badge bg-red-500/10 border border-red-500/20 text-red-400 mb-6">
+                        <i data-lucide="alert-triangle" class="w-3 h-3"></i>
+                        <span>CRITICAL RISKS</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-5 leading-tight" data-t="solve.title">
+                        Critical Business Risks We Mitigate
+                    </h2>
+                    <p class="text-lg text-white/50 leading-relaxed" data-t="solve.subtitle">
+                        The financial, legal, and operational damage of system failure is far greater than the cost of proactive prevention. We protect your business continuity.
+                    </p>
+                </div>
+                <div class="hero-image-container h-72 img-shine hidden lg:block">
+                    <img src="./images/risk_threat_dashboard.png" alt="Cybersecurity Threat Dashboard" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-l from-navy-950/20 via-transparent to-navy-950/60 z-[3]"></div>
+                    <div class="absolute bottom-5 left-5 z-[4]">
+                        <span class="badge bg-red-500/20 border border-red-500/30 text-red-400">
+                            <i data-lucide="shield-alert" class="w-3 h-3"></i>
+                            THREAT VISUALIZATION
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Risk Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Downtime -->
+                <div class="glass-card rounded-2xl p-8 relative flex flex-col gap-5 overflow-hidden">
+                    <div class="risk-bar absolute top-0 left-0 right-0"></div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-red-500/20 to-red-900/10 border border-red-500/15 flex items-center justify-center text-red-400 shrink-0">
+                            <i data-lucide="server-crash" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-mono text-red-400/80 uppercase tracking-widest font-bold">BUSINESS RISK</span>
+                            <h3 class="text-lg font-bold text-white mt-1" data-t="solve.downtime.problem">System Downtime</h3>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 text-white/20">
+                        <div class="flex-1 h-px bg-gradient-to-r from-red-500/20 to-accent-emerald/20"></div>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        <div class="flex-1 h-px bg-gradient-to-r from-accent-emerald/20 to-transparent"></div>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <div>
+                            <span class="text-[10px] font-mono text-accent-emerald uppercase tracking-widest font-bold">RESOLUTION</span>
+                            <p class="text-sm font-semibold text-white mt-1" data-t="solve.downtime.solution">High-Availability Redundancy</p>
+                        </div>
+                        <div class="bg-red-500/5 border border-red-500/10 rounded-xl p-4">
+                            <span class="text-[10px] font-mono text-red-400 uppercase tracking-widest font-bold">FINANCIAL DAMAGE</span>
+                            <p class="text-xs text-white/60 mt-1.5 leading-relaxed" data-t="solve.downtime.impact">฿500,000/hour in lost billing, stopped supply chain, and patient record delay.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ransomware -->
+                <div class="glass-card rounded-2xl p-8 relative flex flex-col gap-5 overflow-hidden">
+                    <div class="risk-bar absolute top-0 left-0 right-0"></div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-red-500/20 to-red-900/10 border border-red-500/15 flex items-center justify-center text-red-400 shrink-0">
+                            <i data-lucide="skull" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-mono text-red-400/80 uppercase tracking-widest font-bold">BUSINESS RISK</span>
+                            <h3 class="text-lg font-bold text-white mt-1" data-t="solve.ransomware.problem">Ransomware Attacks</h3>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 text-white/20">
+                        <div class="flex-1 h-px bg-gradient-to-r from-red-500/20 to-accent-emerald/20"></div>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        <div class="flex-1 h-px bg-gradient-to-r from-accent-emerald/20 to-transparent"></div>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <div>
+                            <span class="text-[10px] font-mono text-accent-emerald uppercase tracking-widest font-bold">RESOLUTION</span>
+                            <p class="text-sm font-semibold text-white mt-1" data-t="solve.ransomware.solution">Immutable Backups & Endpoint Shielding</p>
+                        </div>
+                        <div class="bg-red-500/5 border border-red-500/10 rounded-xl p-4">
+                            <span class="text-[10px] font-mono text-red-400 uppercase tracking-widest font-bold">FINANCIAL DAMAGE</span>
+                            <p class="text-xs text-white/60 mt-1.5 leading-relaxed" data-t="solve.ransomware.impact">฿3,000,000+ extortion demands, total database destruction, and brand trust ruin.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Loss -->
+                <div class="glass-card rounded-2xl p-8 relative flex flex-col gap-5 overflow-hidden">
+                    <div class="risk-bar absolute top-0 left-0 right-0"></div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-red-500/20 to-red-900/10 border border-red-500/15 flex items-center justify-center text-red-400 shrink-0">
+                            <i data-lucide="database-zap" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-mono text-red-400/80 uppercase tracking-widest font-bold">BUSINESS RISK</span>
+                            <h3 class="text-lg font-bold text-white mt-1" data-t="solve.dataloss.problem">Data Loss Risks</h3>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 text-white/20">
+                        <div class="flex-1 h-px bg-gradient-to-r from-red-500/20 to-accent-emerald/20"></div>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        <div class="flex-1 h-px bg-gradient-to-r from-accent-emerald/20 to-transparent"></div>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <div>
+                            <span class="text-[10px] font-mono text-accent-emerald uppercase tracking-widest font-bold">RESOLUTION</span>
+                            <p class="text-sm font-semibold text-white mt-1" data-t="solve.dataloss.solution">Multi-tier Automated Backup Architecture</p>
+                        </div>
+                        <div class="bg-red-500/5 border border-red-500/10 rounded-xl p-4">
+                            <span class="text-[10px] font-mono text-red-400 uppercase tracking-widest font-bold">FINANCIAL DAMAGE</span>
+                            <p class="text-xs text-white/60 mt-1.5 leading-relaxed" data-t="solve.dataloss.impact">Loss of critical patient medical history, hospital compliance fines, and unrecoverable accounting records.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- SECTION: RISK VS PROTECTION COST MATRIX -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section id="cost-matrix" class="py-28 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="badge bg-accent-cyan/10 border border-accent-cyan/20 text-accent-cyan mx-auto mb-6">
+                    <i data-lucide="bar-chart-3" class="w-3 h-3"></i>
+                    <span data-t="matrix.tag">Financial Risk Analysis</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-5 leading-tight" data-t="matrix.title">
+                    The Cost of Inaction vs. Proactive Protection
+                </h2>
+                <p class="text-base text-white/50 leading-relaxed" data-t="matrix.subtitle">
+                    Investing in prevention costs a fraction of recovery. Emergency breakdown damage is exponentially higher.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+                <!-- Risk (Failure) Column -->
+                <div class="glass rounded-2xl p-8 border border-red-500/20 relative flex flex-col justify-between overflow-hidden">
+                    <div class="risk-bar absolute top-0 left-0 right-0"></div>
+                    <div>
+                        <div class="flex items-center gap-4 mb-8">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500/20 to-red-900/10 border border-red-500/15 flex items-center justify-center text-red-400">
+                                <i data-lucide="trending-down" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white uppercase tracking-wider" data-t="matrix.risk.title">Unprotected System (Reactive)</h3>
+                        </div>
+                        
+                        <div class="flex flex-col gap-5">
+                            <div class="flex justify-between items-start border-b border-white/[0.04] pb-4">
+                                <div class="flex-1">
+                                    <p class="text-sm font-bold text-white" data-t="matrix.risk.item1.title">Ransomware Ransom</p>
+                                    <p class="text-xs text-white/40 mt-1" data-t="matrix.risk.item1.desc">Extortion payment with no guarantee of decryption.</p>
+                                </div>
+                                <span class="text-sm font-mono font-bold text-red-400 ml-4 shrink-0">฿3,000,000+</span>
+                            </div>
+                            <div class="flex justify-between items-start border-b border-white/[0.04] pb-4">
+                                <div class="flex-1">
+                                    <p class="text-sm font-bold text-white" data-t="matrix.risk.item2.title">Operational Downtime</p>
+                                    <p class="text-xs text-white/40 mt-1" data-t="matrix.risk.item2.desc">Factory halts, hospital HIS offline, unbilled service hours.</p>
+                                </div>
+                                <span class="text-sm font-mono font-bold text-red-400 ml-4 shrink-0">฿500,000/hr</span>
+                            </div>
+                            <div class="flex justify-between items-start border-b border-white/[0.04] pb-4">
+                                <div class="flex-1">
+                                    <p class="text-sm font-bold text-white" data-t="matrix.risk.item3.title">Customer Lawsuits & Compliance</p>
+                                    <p class="text-xs text-white/40 mt-1" data-t="matrix.risk.item3.desc">PDPA privacy breaches, hospital patient data leak fines.</p>
+                                </div>
+                                <span class="text-sm font-mono font-bold text-red-400 ml-4 shrink-0">฿1,000,000+</span>
+                            </div>
+                            <div class="flex justify-between items-start">
+                                <div class="flex-1">
+                                    <p class="text-sm font-bold text-white" data-t="matrix.risk.item4.title">Reputational Trust Destruction</p>
+                                    <p class="text-xs text-white/40 mt-1" data-t="matrix.risk.item4.desc">Loss of primary tier contracts, negative PR coverage.</p>
+                                </div>
+                                <span class="text-sm font-mono font-bold text-red-400 ml-4 shrink-0" data-t="matrix.risk.unmeasurable">Unmeasurable</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 pt-5 border-t border-red-500/15 text-center">
+                        <p class="text-sm font-mono text-red-400 font-bold" data-t="matrix.risk.total">TOTAL LOSS EXCEEDING: ฿5,000,000+</p>
+                    </div>
+                </div>
+                
+                <!-- Protection (Proactive) Column -->
+                <div class="glass rounded-2xl p-8 border border-accent-cyan/20 relative flex flex-col justify-between overflow-hidden glow-cyan">
+                    <div class="protect-bar absolute top-0 left-0 right-0"></div>
+                    <div class="absolute -right-20 -top-20 w-40 h-40 bg-accent-cyan/5 rounded-full blur-3xl"></div>
+                    <div>
+                        <div class="flex items-center gap-4 mb-8">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-cyan/15 to-accent-blue/10 border border-accent-cyan/20 flex items-center justify-center text-accent-cyan">
+                                <i data-lucide="shield-check" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white uppercase tracking-wider" data-t="matrix.protect.title">Southern Enterprise Partner (Proactive)</h3>
+                        </div>
+                        
+                        <div class="flex flex-col gap-5">
+                            <div class="flex justify-between items-start border-b border-white/[0.04] pb-4">
+                                <div class="flex-1">
+                                    <p class="text-sm font-bold text-white" data-t="matrix.protect.item1.title">Server & Network Leasing (OPEX)</p>
+                                    <p class="text-xs text-white/40 mt-1" data-t="matrix.protect.item1.desc">Hardware rental, zero upfront capital cost, continuous upgrades.</p>
+                                </div>
+                                <span class="text-xs font-mono font-bold text-accent-cyan ml-4 shrink-0" data-t="matrix.protect.fraction">Fractional OPEX</span>
+                            </div>
+                            <div class="flex justify-between items-start border-b border-white/[0.04] pb-4">
+                                <div class="flex-1">
+                                    <p class="text-sm font-bold text-white" data-t="matrix.protect.item2.title">24/7 Monitored Cybersecurity & Firewall</p>
+                                    <p class="text-xs text-white/40 mt-1" data-t="matrix.protect.item2.desc">Isolate threats immediately before they touch network endpoints.</p>
+                                </div>
+                                <span class="text-xs font-mono font-bold text-accent-cyan ml-4 shrink-0" data-t="matrix.protect.included">Included in Service</span>
+                            </div>
+                            <div class="flex justify-between items-start border-b border-white/[0.04] pb-4">
+                                <div class="flex-1">
+                                    <p class="text-sm font-bold text-white" data-t="matrix.protect.item3.title">Immutable 3-2-1 Cloud Backup</p>
+                                    <p class="text-xs text-white/40 mt-1" data-t="matrix.protect.item3.desc">Automatic air-gapped encryption. Restores in minutes if hit.</p>
+                                </div>
+                                <span class="text-xs font-mono font-bold text-accent-cyan ml-4 shrink-0" data-t="matrix.protect.included">Included in Service</span>
+                            </div>
+                            <div class="flex justify-between items-start">
+                                <div class="flex-1">
+                                    <p class="text-sm font-bold text-white" data-t="matrix.protect.item4.title">Comprehensive MA SLA Agreements</p>
+                                    <p class="text-xs text-white/40 mt-1" data-t="matrix.protect.item4.desc">Quick onsite response and hardware replacement in Southern region.</p>
+                                </div>
+                                <span class="text-xs font-mono font-bold text-accent-cyan ml-4 shrink-0" data-t="matrix.protect.predictable">Predictable Cost</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 pt-5 border-t border-accent-cyan/15 text-center">
+                        <p class="text-sm font-mono text-accent-cyan font-bold" data-t="matrix.protect.total">PREDICTABLE BUDGET: LESS THAN 5% OF TOTAL RISK LOSS</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- SECTION 3 — SOLUTIONS -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section id="solutions" class="py-28 relative overflow-hidden">
+        <div class="absolute inset-0 bg-dots opacity-30 pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <div class="badge bg-accent-cyan/10 border border-accent-cyan/20 text-accent-cyan mx-auto mb-6">
+                    <i data-lucide="layers" class="w-3 h-3"></i>
+                    <span>SOLUTIONS</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-5 leading-tight" data-t="sol.title">
+                    Enterprise Technology Solutions & Risk Mitigation
+                </h2>
+                <p class="text-lg text-white/50 leading-relaxed" data-t="sol.subtitle">
+                    Custom-architected IT solutions designed for scale, resilience, and reliability. Avoid massive financial damages with proactive infrastructure.
+                </p>
+            </div>
+
+            <!-- Featured Banner with Hospital IT Image -->
+            <div class="hero-image-container h-80 mb-16 img-shine relative">
+                <img src="./images/hospital_it_system.png" alt="Hospital IT Infrastructure" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-navy-950/90 via-navy-950/40 to-transparent z-[3]"></div>
+                <div class="absolute bottom-8 left-8 max-w-lg z-[4]">
+                    <span class="badge bg-accent-cyan/15 border border-accent-cyan/25 text-accent-cyan mb-4">
+                        <i data-lucide="activity" class="w-3 h-3 animate-pulse"></i>
+                        24/7 Security Operations
+                    </span>
+                    <h3 class="text-2xl font-bold text-white mb-3" data-t="sol.banner.title">Proactive Protection Center</h3>
+                    <p class="text-sm text-white/60 leading-relaxed" data-t="sol.banner.desc">Our regional security hub monitors all endpoints, preventing breaches before they disrupt your hospital patient services or factory supply lines.</p>
+                </div>
+            </div>
+
+            <!-- Solution Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+                <!-- Enterprise Systems -->
+                <div class="glass-card rounded-2xl p-8 flex flex-col justify-between overflow-hidden">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent-cyan to-accent-blue flex items-center justify-center text-white shadow-lg glow-cyan mb-7">
+                            <i data-lucide="cpu" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3" data-t="sol.systems.title">Enterprise Systems</h3>
+                        <p class="text-sm text-white/50 leading-relaxed mb-6" data-t="sol.systems.desc">End-to-end IT architecture design and system integration to streamline operations and prevent system bottlenecks.</p>
+                    </div>
+                    <div class="border-t border-white/[0.05] pt-5 mt-auto">
+                        <ul class="flex flex-col gap-3 text-sm text-white/70">
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0"></i> <span data-t="sol.systems.item1">Infrastructure Design</span></li>
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0"></i> <span data-t="sol.systems.item2">System Integration</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Backup & Recovery -->
+                <div class="glass-card rounded-2xl p-8 flex flex-col justify-between overflow-hidden">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white shadow-lg mb-7">
+                            <i data-lucide="database" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3" data-t="sol.backup.title">Backup & Recovery</h3>
+                        <p class="text-sm text-white/50 leading-relaxed mb-6" data-t="sol.backup.desc">Robust backup frameworks ensuring business continuity in every scenario. Remember: the cost of data loss dwarfs the cost of backup systems.</p>
+                    </div>
+                    <div class="border-t border-white/[0.05] pt-5 mt-auto">
+                        <ul class="flex flex-col gap-3 text-sm text-white/70">
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0"></i> <span data-t="sol.backup.item1">Backup Architecture</span></li>
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0"></i> <span data-t="sol.backup.item2">Disaster Recovery (DR)</span></li>
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0"></i> <span data-t="sol.backup.item3">Business Continuity</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Server & Compute -->
+                <div class="glass-card rounded-2xl p-8 flex flex-col justify-between overflow-hidden">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500 to-accent-blue flex items-center justify-center text-white shadow-lg mb-7">
+                            <i data-lucide="server" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3" data-t="sol.compute.title">Server & Compute</h3>
+                        <p class="text-sm text-white/50 leading-relaxed mb-6" data-t="sol.compute.desc">High-density virtualization, storage computing, and flexible Server Rental & Leasing options to optimize CAPEX.</p>
+                    </div>
+                    <div class="border-t border-white/[0.05] pt-5 mt-auto">
+                        <ul class="flex flex-col gap-3 text-sm text-white/70">
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0"></i> <span data-t="sol.compute.item1">Virtualization & Hypervisors</span></li>
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0"></i> <span data-t="sol.compute.item2">Server Rental & Leasing</span></li>
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0"></i> <span data-t="sol.compute.item3">High Availability Clusters</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Cybersecurity -->
+                <div class="glass-card rounded-2xl p-8 flex flex-col justify-between overflow-hidden">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent-cyan to-blue-500 flex items-center justify-center text-white shadow-lg glow-cyan mb-7">
+                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3" data-t="sol.security.title">Cybersecurity</h3>
+                        <p class="text-sm text-white/50 leading-relaxed mb-6" data-t="sol.security.desc">Defending enterprise assets with proactive posture and modern security layers. A breach costs 10x more than prevention.</p>
+                    </div>
+                    <div class="border-t border-white/[0.05] pt-5 mt-auto">
+                        <ul class="flex flex-col gap-3 text-sm text-white/70">
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0"></i> <span data-t="sol.security.item1">Firewall & Zero Trust</span></li>
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0"></i> <span data-t="sol.security.item2">Endpoint Protection</span></li>
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0"></i> <span data-t="sol.security.item3">Monitoring & SOC Readiness</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Network & Hardware -->
+                <div class="glass-card rounded-2xl p-8 flex flex-col justify-between overflow-hidden">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-accent-cyan flex items-center justify-center text-white shadow-lg mb-7">
+                            <i data-lucide="network" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3" data-t="sol.network.title">Network & Hardware Renting</h3>
+                        <p class="text-sm text-white/50 leading-relaxed mb-6" data-t="sol.network.desc">Secure, fast, and multi-site enterprise-grade network architectures. Rent core network devices to reduce setup costs.</p>
+                    </div>
+                    <div class="border-t border-white/[0.05] pt-5 mt-auto">
+                        <ul class="flex flex-col gap-3 text-sm text-white/70">
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0"></i> <span data-t="sol.network.item1">Core & Edge Networking</span></li>
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0"></i> <span data-t="sol.network.item2">Network Equipment Rental</span></li>
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0"></i> <span data-t="sol.network.item3">Enterprise Secure WiFi</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- MA Services -->
+                <div class="glass-card rounded-2xl p-8 flex flex-col justify-between overflow-hidden">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-white shadow-lg mb-7">
+                            <i data-lucide="wrench" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3" data-t="sol.ma.title">Unified MA Services</h3>
+                        <p class="text-sm text-white/50 leading-relaxed mb-6" data-t="sol.ma.desc">Comprehensive Maintenance Agreements (MA) across all systems. Stop paying for expensive emergency breakdown callouts.</p>
+                    </div>
+                    <div class="border-t border-white/[0.05] pt-5 mt-auto">
+                        <ul class="flex flex-col gap-3 text-sm text-white/70">
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0"></i> <span data-t="sol.ma.item1">24/7 Onsite Engineer SLA</span></li>
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0"></i> <span data-t="sol.ma.item2">Hardware Replacement Guarantee</span></li>
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-accent-cyan shrink-0"></i> <span data-t="sol.ma.item3">Proactive System Health Checks</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- SECTION 4 — PARTNER SOLUTIONS -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section id="partner" class="py-28 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            
+            <div class="max-w-3xl mb-16">
+                <div class="badge bg-accent-indigo/10 border border-accent-indigo/20 text-accent-indigo mb-6">
+                    <i data-lucide="handshake" class="w-3 h-3"></i>
+                    <span data-t="partner.badge">Authorized Solution Partner</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-5 leading-tight" data-t="partner.title">
+                    Solutions Delivered Together with NebulaSoft Enterprise
+                </h2>
+                <p class="text-lg text-white/50 leading-relaxed" data-t="partner.subtitle">
+                    Combining regional agility with world-class product design and enterprise engineering.
+                </p>
+            </div>
+
+            <!-- Architecture Flow -->
+            <div class="glass rounded-2xl p-8 md:p-10 border border-accent-indigo/15 mb-12 relative overflow-hidden">
+                <div class="absolute -left-20 -bottom-20 w-60 h-60 bg-accent-indigo/5 rounded-full blur-3xl"></div>
+                
+                <p class="text-[10px] font-mono text-accent-indigo/70 uppercase tracking-[0.2em] mb-8 font-bold" data-t="partner.archTitle">INTEGRATED PROCUREMENT & DEPLOYMENT ARCHITECTURE</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                    <!-- Step 1 -->
+                    <div class="flex flex-col items-center text-center relative">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent-cyan/15 to-accent-blue/10 border border-accent-cyan/20 flex items-center justify-center text-accent-cyan mb-5">
+                            <i data-lucide="building-2" class="w-7 h-7"></i>
+                        </div>
+                        <span class="text-[10px] font-mono text-accent-cyan/60 tracking-widest mb-2">STEP 01</span>
+                        <h4 class="text-base font-bold text-white mb-2" data-t="partner.step1.title">Southern Clients</h4>
+                        <p class="text-xs text-white/40 leading-relaxed" data-t="partner.step1.desc">Hospitals, Factories, and Businesses request custom IT architectures.</p>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="flex flex-col items-center text-center relative">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent-indigo/15 to-accent-blue/10 border border-accent-indigo/20 flex items-center justify-center text-accent-indigo mb-5">
+                            <i data-lucide="scan-search" class="w-7 h-7"></i>
+                        </div>
+                        <span class="text-[10px] font-mono text-accent-indigo/60 tracking-widest mb-2">STEP 02</span>
+                        <h4 class="text-base font-bold text-white mb-2" data-t="partner.step2.title">Regional Solution Partner</h4>
+                        <p class="text-xs text-white/40 leading-relaxed" data-t="partner.step2.desc">We audit, survey, and design the solution. We manage regional implementation.</p>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="flex flex-col items-center text-center relative">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent-blue/15 to-accent-indigo/10 border border-accent-blue/20 flex items-center justify-center text-accent-blue mb-5">
+                            <i data-lucide="factory" class="w-7 h-7"></i>
+                        </div>
+                        <span class="text-[10px] font-mono text-accent-blue/60 tracking-widest mb-2">STEP 03</span>
+                        <h4 class="text-base font-bold text-white mb-2" data-t="partner.step3.title">NebulaSoft HQ</h4>
+                        <p class="text-xs text-white/40 leading-relaxed" data-t="partner.step3.desc">Purchasing, hardware procurement, and formal invoicing are processed.</p>
+                    </div>
+                </div>
+                
+                <p id="procurement-note" class="text-[10px] text-white/25 font-mono mt-8 text-center">
+                    *Note: Product procurement, licensing, and formal invoicing are processed securely via NebulaSoft Headquarters purchasing workflow.
+                </p>
+            </div>
+
+            <!-- Partner Solutions Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-7">
+                <div class="glass-card rounded-2xl p-7 flex items-start gap-5">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-cyan/10 to-accent-blue/10 border border-accent-cyan/15 flex items-center justify-center text-accent-cyan shrink-0">
+                        <i data-lucide="cloud" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-white mb-2" data-t="partner.recovery.title">NebulaSoft Cloud Recovery</h4>
+                        <p class="text-xs text-white/45 leading-relaxed" data-t="partner.recovery.desc">Direct fiber synchronization between your Southern location and primary databases, ensuring instant disaster recovery failover.</p>
+                    </div>
+                </div>
+                <div class="glass-card rounded-2xl p-7 flex items-start gap-5">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-indigo/10 to-accent-blue/10 border border-accent-indigo/15 flex items-center justify-center text-accent-indigo shrink-0">
+                        <i data-lucide="monitor" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-white mb-2" data-t="partner.soft.title">Enterprise Software</h4>
+                        <p class="text-xs text-white/45 leading-relaxed" data-t="partner.soft.desc">Centralized management tools, server OS, and corporate suites.</p>
+                    </div>
+                </div>
+                <div class="glass-card rounded-2xl p-7 flex items-start gap-5">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-blue/10 to-accent-cyan/10 border border-accent-blue/15 flex items-center justify-center text-accent-blue shrink-0">
+                        <i data-lucide="wifi" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-white mb-2" data-t="partner.wifi.title">Wireless Access Points</h4>
+                        <p class="text-xs text-white/45 leading-relaxed" data-t="partner.wifi.desc">High-density secure enterprise WiFi hardware and managed cloud networks.</p>
+                    </div>
+                </div>
+                <div class="glass-card rounded-2xl p-7 flex items-start gap-5">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-cyan/10 to-accent-indigo/10 border border-accent-cyan/15 flex items-center justify-center text-accent-cyan shrink-0">
+                        <i data-lucide="server" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-white mb-2" data-t="partner.server.title">Server Platforms</h4>
+                        <p class="text-xs text-white/45 leading-relaxed" data-t="partner.server.desc">Highly-scalable computing hardware designed for continuous workload.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- SECTION 5 — WHY CHOOSE US -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section id="why-us" class="py-28 relative overflow-hidden">
+        <div class="absolute inset-0 bg-dots opacity-30 pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="badge bg-accent-cyan/10 border border-accent-cyan/20 text-accent-cyan mx-auto mb-6">
+                    <i data-lucide="award" class="w-3 h-3"></i>
+                    <span>WHY US</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-5 leading-tight" data-t="why.title">
+                    Why Southern Organizations Trust Us
+                </h2>
+                <p class="text-lg text-white/50 leading-relaxed" data-t="why.subtitle">
+                    Combining local availability with enterprise standards to deliver unmatched service reliability.
+                </p>
+            </div>
+
+            <!-- Process Pipeline -->
+            <div class="glass rounded-2xl p-8 md:p-10 border border-white/[0.06] mb-12">
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center bg-gradient-to-br from-navy-800 to-navy-900 text-white/60 border border-white/[0.08] hover:border-accent-cyan/30 hover:text-accent-cyan transition-all group">
+                            <i data-lucide="search" class="w-6 h-6 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h4 class="text-sm font-bold text-white mt-5" data-t="why.pipe1.title">Consult</h4>
+                        <p class="text-[11px] text-white/40 leading-relaxed mt-2" data-t="why.pipe1.desc">In-depth audit of current IT infrastructure and pain points.</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center bg-gradient-to-br from-navy-800 to-navy-900 text-white/60 border border-white/[0.08] hover:border-accent-cyan/30 hover:text-accent-cyan transition-all group">
+                            <i data-lucide="ruler" class="w-6 h-6 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h4 class="text-sm font-bold text-white mt-5" data-t="why.pipe2.title">Design</h4>
+                        <p class="text-[11px] text-white/40 leading-relaxed mt-2" data-t="why.pipe2.desc">Custom-architected solutions tailored to business and budgetary needs.</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center bg-gradient-to-br from-navy-800 to-navy-900 text-white/60 border border-white/[0.08] hover:border-accent-cyan/30 hover:text-accent-cyan transition-all group">
+                            <i data-lucide="play" class="w-6 h-6 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h4 class="text-sm font-bold text-white mt-5" data-t="why.pipe3.title">Deploy</h4>
+                        <p class="text-[11px] text-white/40 leading-relaxed mt-2" data-t="why.pipe3.desc">Seamless, zero-downtime execution and system integration.</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center bg-gradient-to-br from-navy-800 to-navy-900 text-white/60 border border-white/[0.08] hover:border-accent-cyan/30 hover:text-accent-cyan transition-all group">
+                            <i data-lucide="shield-alert" class="w-6 h-6 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h4 class="text-sm font-bold text-white mt-5" data-t="why.pipe4.title">Protect</h4>
+                        <p class="text-[11px] text-white/40 leading-relaxed mt-2" data-t="why.pipe4.desc">Active threat intelligence and cybersecurity monitoring.</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center bg-gradient-to-br from-navy-800 to-navy-900 text-white/60 border border-white/[0.08] hover:border-accent-cyan/30 hover:text-accent-cyan transition-all group">
+                            <i data-lucide="heart-handshake" class="w-6 h-6 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h4 class="text-sm font-bold text-white mt-5" data-t="why.pipe5.title">Support</h4>
+                        <p class="text-[11px] text-white/40 leading-relaxed mt-2" data-t="why.pipe5.desc">24/7 responsive helpdesk and onsite local engineer dispatch.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Value Props -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
+                <div class="glass-card rounded-xl p-6 flex flex-col gap-4">
+                    <div class="w-11 h-11 rounded-xl bg-accent-cyan/10 flex items-center justify-center text-accent-cyan"><i data-lucide="zap" class="w-5 h-5"></i></div>
+                    <h4 class="text-sm font-bold text-white" data-t="why.val1.title">Fast Response</h4>
+                    <p class="text-[11px] text-white/40 leading-relaxed" data-t="why.val1.desc">Onsite support in hours, not days, for Southern region organizations.</p>
+                </div>
+                <div class="glass-card rounded-xl p-6 flex flex-col gap-4">
+                    <div class="w-11 h-11 rounded-xl bg-accent-cyan/10 flex items-center justify-center text-accent-cyan"><i data-lucide="award" class="w-5 h-5"></i></div>
+                    <h4 class="text-sm font-bold text-white" data-t="why.val2.title">Enterprise Standards</h4>
+                    <p class="text-[11px] text-white/40 leading-relaxed" data-t="why.val2.desc">Deploying certified technologies compliant with ISO 27001 / NIST.</p>
+                </div>
+                <div class="glass-card rounded-xl p-6 flex flex-col gap-4">
+                    <div class="w-11 h-11 rounded-xl bg-accent-cyan/10 flex items-center justify-center text-accent-cyan"><i data-lucide="map-pin" class="w-5 h-5"></i></div>
+                    <h4 class="text-sm font-bold text-white" data-t="why.val3.title">Regional Support</h4>
+                    <p class="text-[11px] text-white/40 leading-relaxed" data-t="why.val3.desc">Dedicated engineers stationed in Surat Thani, Chumphon, and Ranong.</p>
+                </div>
+                <div class="glass-card rounded-xl p-6 flex flex-col gap-4">
+                    <div class="w-11 h-11 rounded-xl bg-accent-cyan/10 flex items-center justify-center text-accent-cyan"><i data-lucide="eye" class="w-5 h-5"></i></div>
+                    <h4 class="text-sm font-bold text-white" data-t="why.val4.title">Preventive Approach</h4>
+                    <p class="text-[11px] text-white/40 leading-relaxed" data-t="why.val4.desc">Proactive monitoring to fix faults before they disrupt your business.</p>
+                </div>
+                <div class="glass-card rounded-xl p-6 flex flex-col gap-4">
+                    <div class="w-11 h-11 rounded-xl bg-accent-cyan/10 flex items-center justify-center text-accent-cyan"><i data-lucide="star" class="w-5 h-5"></i></div>
+                    <h4 class="text-sm font-bold text-white" data-t="why.val5.title">Long-term Partner</h4>
+                    <p class="text-[11px] text-white/40 leading-relaxed" data-t="why.val5.desc">Supporting your IT scaling needs from small teams to multi-site campuses.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- SECTION 6 — INDUSTRIES -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section id="industries" class="py-28 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-5 leading-tight" data-t="ind.title">
+                    Industries We Support
+                </h2>
+                <p class="text-lg text-white/50 leading-relaxed" data-t="ind.subtitle">
+                    Tailored IT configurations designed for regulatory compliance, security, and high performance.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Healthcare -->
+                <div class="glass-card rounded-2xl overflow-hidden group">
+                    <div class="h-48 img-shine relative overflow-hidden">
+                        <img src="./images/hospital_it_system.png" alt="Hospital IT Systems" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/30 to-transparent z-[3]"></div>
+                    </div>
+                    <div class="p-7">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-accent-cyan/10 flex items-center justify-center text-accent-cyan"><i data-lucide="heart-pulse" class="w-5 h-5"></i></div>
+                            <h3 class="text-lg font-bold text-white" data-t="ind.health.title">Healthcare & Hospitals</h3>
+                        </div>
+                        <p class="text-sm text-white/45 leading-relaxed" data-t="ind.health.desc">HIS redundancy, PACS storage backup, PDPA/HIPAA compliance, and zero-downtime patient record access.</p>
+                        <div class="border-t border-white/[0.05] pt-4 mt-5 flex items-center gap-2">
+                            <i data-lucide="shield-check" class="w-4 h-4 text-accent-cyan"></i>
+                            <span class="text-[11px] font-mono text-white/30">PDPA / HIPAA Compliant</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Manufacturing -->
+                <div class="glass-card rounded-2xl overflow-hidden group">
+                    <div class="h-48 img-shine relative overflow-hidden">
+                        <img src="./images/network_equipment.png" alt="Factory Network Systems" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/30 to-transparent z-[3]"></div>
+                    </div>
+                    <div class="p-7">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-accent-cyan/10 flex items-center justify-center text-accent-cyan"><i data-lucide="factory" class="w-5 h-5"></i></div>
+                            <h3 class="text-lg font-bold text-white" data-t="ind.factory.title">Manufacturing & Factories</h3>
+                        </div>
+                        <p class="text-sm text-white/45 leading-relaxed" data-t="ind.factory.desc">OT network segmentation, factory automation monitoring, ransomware shielding, and multi-site WAN.</p>
+                        <div class="border-t border-white/[0.05] pt-4 mt-5 flex items-center gap-2">
+                            <i data-lucide="shield-check" class="w-4 h-4 text-accent-cyan"></i>
+                            <span class="text-[11px] font-mono text-white/30">NIST / OT Security Shield</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enterprise -->
+                <div class="glass-card rounded-2xl overflow-hidden group">
+                    <div class="h-48 img-shine relative overflow-hidden">
+                        <img src="./images/risk_threat_dashboard.png" alt="Enterprise Security" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/30 to-transparent z-[3]"></div>
+                    </div>
+                    <div class="p-7">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-accent-cyan/10 flex items-center justify-center text-accent-cyan"><i data-lucide="building-2" class="w-5 h-5"></i></div>
+                            <h3 class="text-lg font-bold text-white" data-t="ind.office.title">Large Enterprise Offices</h3>
+                        </div>
+                        <p class="text-sm text-white/45 leading-relaxed" data-t="ind.office.desc">Centralized server management, secure staff WiFi, Zero Trust remote work security, and hybrid cloud.</p>
+                        <div class="border-t border-white/[0.05] pt-4 mt-5 flex items-center gap-2">
+                            <i data-lucide="shield-check" class="w-4 h-4 text-accent-cyan"></i>
+                            <span class="text-[11px] font-mono text-white/30">ISO 27001 Readiness</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- SECTION 7 — TRUST & METRICS -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section id="trust" class="py-28 relative overflow-hidden">
+        <div class="absolute inset-0 bg-dots opacity-20 pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-5 leading-tight" data-t="trust.title">
+                    Designed for Confidence & Reliability
+                </h2>
+                <p class="text-lg text-white/50 leading-relaxed" data-t="trust.subtitle">
+                    Real numbers and client testimonials reflecting our commitment to enterprise excellence.
+                </p>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                <div class="glass rounded-2xl p-7 text-center border border-white/[0.06] hover:border-accent-cyan/15 transition-all">
+                    <p class="text-4xl md:text-5xl font-black font-mono gradient-text counter" data-count="150">0</p>
+                    <p class="text-xs font-semibold text-white/40 mt-3" data-t="trust.stat1">Projects Completed</p>
+                </div>
+                <div class="glass rounded-2xl p-7 text-center border border-white/[0.06] hover:border-accent-cyan/15 transition-all">
+                    <p class="text-4xl md:text-5xl font-black font-mono gradient-text counter" data-count="4800">0</p>
+                    <p class="text-xs font-semibold text-white/40 mt-3" data-t="trust.stat2">Systems Protected</p>
+                </div>
+                <div class="glass rounded-2xl p-7 text-center border border-white/[0.06] hover:border-accent-cyan/15 transition-all">
+                    <p class="text-4xl md:text-5xl font-black font-mono gradient-text">99.99%</p>
+                    <p class="text-xs font-semibold text-white/40 mt-3" data-t="trust.stat3">SLA Availability</p>
+                </div>
+                <div class="glass rounded-2xl p-7 text-center border border-white/[0.06] hover:border-accent-cyan/15 transition-all">
+                    <p class="text-4xl md:text-5xl font-black font-mono gradient-text">98.5%</p>
+                    <p class="text-xs font-semibold text-white/40 mt-3" data-t="trust.stat4">Customer Satisfaction</p>
+                </div>
+            </div>
+
+            <!-- Testimonials -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="glass rounded-2xl p-8 flex flex-col justify-between relative border border-white/[0.06] overflow-hidden">
+                    <div class="absolute -left-6 -top-6 text-accent-cyan/5">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                    </div>
+                    <p class="text-base text-white/70 italic leading-relaxed relative z-10 mb-8" data-t="trust.quote1">
+                        "Their team designed our entire hospital data redundancy system. During a power failure last month, the failover was so seamless that none of our clinical staff even noticed."
+                    </p>
+                    <div class="border-t border-white/[0.06] pt-5 flex items-center gap-4 relative z-10">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-accent-cyan to-accent-blue flex items-center justify-center text-white font-bold text-sm">IT</div>
+                        <div>
+                            <p class="text-sm font-bold text-white" data-t="trust.author1">Director of IT</p>
+                            <p class="text-xs text-accent-cyan" data-t="trust.company1">Regional Hospital Group, Surat Thani</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass rounded-2xl p-8 flex flex-col justify-between relative border border-white/[0.06] overflow-hidden">
+                    <div class="absolute -left-6 -top-6 text-accent-cyan/5">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                    </div>
+                    <p class="text-base text-white/70 italic leading-relaxed relative z-10 mb-8" data-t="trust.quote2">
+                        "After suffering a ransomware threat, we partnered with them for security hardening. Their NebulaSoft enterprise systems and local support saved us from massive financial loss."
+                    </p>
+                    <div class="border-t border-white/[0.06] pt-5 flex items-center gap-4 relative z-10">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-accent-indigo to-accent-blue flex items-center justify-center text-white font-bold text-sm">OM</div>
+                        <div>
+                            <p class="text-sm font-bold text-white" data-t="trust.author2">Operations Manager</p>
+                            <p class="text-xs text-accent-cyan" data-t="trust.company2">Leading Agro-export Factory, Chumphon</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- SECTION 8 — CONTACT -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section id="contact" class="py-28 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-5 leading-tight" data-t="contact.title">
+                    Let's Build a Resilient Infrastructure
+                </h2>
+                <p class="text-lg text-white/50 leading-relaxed" data-t="contact.subtitle">
+                    Consult with our enterprise architects or request a site survey in Southern Thailand.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Contact Form -->
+                <div class="lg:col-span-7 glass rounded-2xl p-8 relative border border-white/[0.06] overflow-hidden">
+                    <div class="protect-bar absolute top-0 left-0 right-0"></div>
+
+                    <form id="contact-form" onsubmit="handleContactSubmit(event)" class="flex flex-col gap-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="flex flex-col gap-2">
+                                <label class="text-[11px] font-mono text-white/40 uppercase tracking-wider" data-t="form.name">Full Name</label>
+                                <input required type="text" class="bg-navy-950/60 border border-white/[0.08] focus:border-accent-cyan/40 rounded-xl p-3.5 text-white text-sm outline-none transition-colors">
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <label class="text-[11px] font-mono text-white/40 uppercase tracking-wider" data-t="form.email">Corporate Email</label>
+                                <input required type="email" class="bg-navy-950/60 border border-white/[0.08] focus:border-accent-cyan/40 rounded-xl p-3.5 text-white text-sm outline-none transition-colors">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="flex flex-col gap-2">
+                                <label class="text-[11px] font-mono text-white/40 uppercase tracking-wider" data-t="form.phone">Phone Number</label>
+                                <input required type="tel" class="bg-navy-950/60 border border-white/[0.08] focus:border-accent-cyan/40 rounded-xl p-3.5 text-white text-sm outline-none transition-colors">
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <label class="text-[11px] font-mono text-white/40 uppercase tracking-wider" data-t="form.org">Organization Name</label>
+                                <input required type="text" class="bg-navy-950/60 border border-white/[0.08] focus:border-accent-cyan/40 rounded-xl p-3.5 text-white text-sm outline-none transition-colors">
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col gap-2">
+                            <label class="text-[11px] font-mono text-white/40 uppercase tracking-wider" data-t="form.industry">Select Industry</label>
+                            <select required class="bg-navy-950/60 border border-white/[0.08] focus:border-accent-cyan/40 rounded-xl p-3.5 text-white text-sm outline-none cursor-pointer transition-colors">
+                                <option value="" disabled selected data-t="form.industryPlaceholder">Select your industry...</option>
+                                <option value="healthcare" data-t="form.ind1">Healthcare & Hospital</option>
+                                <option value="manufacturing" data-t="form.ind2">Manufacturing & Factory</option>
+                                <option value="enterprise" data-t="form.ind3">Enterprise Office</option>
+                                <option value="education" data-t="form.ind4">Education</option>
+                                <option value="government" data-t="form.ind5">Government Organization</option>
+                            </select>
+                        </div>
+
+                        <div class="flex flex-col gap-2">
+                            <label class="text-[11px] font-mono text-white/40 uppercase tracking-wider" data-t="form.message">Message / Project Details</label>
+                            <textarea required rows="4" class="bg-navy-950/60 border border-white/[0.08] focus:border-accent-cyan/40 rounded-xl p-3.5 text-white text-sm outline-none resize-none transition-colors"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary w-full text-center justify-center">
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                            <span data-t="form.submit">Submit Request</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info Sidebar -->
+                <div class="lg:col-span-5 flex flex-col gap-6">
+                    <div class="glass-card rounded-2xl p-6 flex items-start gap-4">
+                        <div class="w-11 h-11 rounded-xl bg-accent-cyan/10 flex items-center justify-center text-accent-cyan shrink-0"><i data-lucide="map-pin" class="w-5 h-5"></i></div>
+                        <div>
+                            <h4 class="text-sm font-bold text-white mb-2" data-t="info.areaTitle">Service Coverage Area</h4>
+                            <p class="text-xs text-white/45 leading-relaxed" data-t="info.areaDesc">Chumphon, Surat Thani, Ranong, Prachuap Khiri Khan, and Southern Thailand.</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-6 flex items-start gap-4">
+                        <div class="w-11 h-11 rounded-xl bg-accent-cyan/10 flex items-center justify-center text-accent-cyan shrink-0"><i data-lucide="clock" class="w-5 h-5"></i></div>
+                        <div>
+                            <h4 class="text-sm font-bold text-white mb-2" data-t="info.addressTitle">Regional Office</h4>
+                            <p class="text-xs text-white/45 leading-relaxed" data-t="info.addressDesc">IT Solutions Center, Surat Thani City, 84000, Thailand</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-6 flex items-start gap-4">
+                        <div class="w-11 h-11 rounded-xl bg-accent-cyan/10 flex items-center justify-center text-accent-cyan shrink-0"><i data-lucide="mail" class="w-5 h-5"></i></div>
+                        <div>
+                            <h4 class="text-sm font-bold text-white mb-2" data-t="info.supportTitle">Emergency Support</h4>
+                            <p class="text-xs text-white/45 font-mono leading-relaxed" data-t="info.supportDesc">24/7 Hotline: +66 (0) 77-XXX-XXX | support@southernenterprise.co.th</p>
+                        </div>
+                    </div>
+
+                    <div class="glass rounded-2xl p-6 border border-white/[0.06] flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="w-11 h-11 rounded-xl bg-white/5 flex items-center justify-center text-white/50"><i data-lucide="calendar" class="w-5 h-5"></i></div>
+                            <div>
+                                <p class="text-sm font-bold text-white" data-t="info.bookTitle">Book a 15m Call</p>
+                                <p class="text-[10px] text-white/30" data-t="info.bookDesc">Find open slots on our calendar</p>
+                            </div>
+                        </div>
+                        <button onclick="alert('Opening calendar booking slot...')" class="px-5 py-2.5 rounded-xl bg-white/5 border border-white/[0.08] text-xs font-bold text-white hover:bg-white/10 hover:border-accent-cyan/20 transition-all" data-t="info.bookBtn">Schedule</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- FOOTER -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <footer class="bg-navy-950 border-t border-white/[0.04] py-12">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-4">
+                <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-accent-cyan/15 to-accent-blue/15 flex items-center justify-center border border-accent-cyan/15">
+                    <i data-lucide="shield" class="w-4 h-4 text-accent-cyan"></i>
+                </div>
+                <p class="text-xs text-white/40" data-t="footer.rights">
+                    © 2026 Southern Enterprise IT Solution Partner. All rights reserved.
+                </p>
+            </div>
+            <div class="max-w-md text-center md:text-right">
+                <p class="text-[10px] font-mono text-white/25" data-t="footer.disclaimer">
+                    Cooperative regional partner of NebulaSoft Enterprise. All enterprise purchases are invoiced through NebulaSoft corporate office.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- SCRIPTS -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // ── Mobile Menu ──────────────────────────────────
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('active');
+        }
+
+        // ── Header scroll effect ─────────────────────────
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('bg-navy-950/90', 'backdrop-blur-xl', 'shadow-lg', 'shadow-navy-950/50');
+            } else {
+                header.classList.remove('bg-navy-950/90', 'backdrop-blur-xl', 'shadow-lg', 'shadow-navy-950/50');
+            }
+        });
+
+        // ── Canvas Particle Network ──────────────────────
+        const canvas = document.getElementById('hero-canvas');
+        const ctx = canvas.getContext('2d');
+        let width = canvas.width = canvas.offsetWidth;
+        let height = canvas.height = canvas.offsetHeight;
+
+        const particles = [];
+        const particleCount = 50;
+        const connectionDistance = 130;
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.35;
+                this.vy = (Math.random() - 0.5) * 0.35;
+                this.radius = Math.random() * 2 + 0.5;
+                this.opacity = Math.random() * 0.5 + 0.3;
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                if (this.x < 0 || this.x > width) this.vx *= -1;
+                if (this.y < 0 || this.y > height) this.vy *= -1;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(0, 229, 255, ${this.opacity})`;
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < particleCount; i++) particles.push(new Particle());
+
+        function animateCanvas() {
+            ctx.clearRect(0, 0, width, height);
+            for (let i = 0; i < particles.length; i++) {
+                const p1 = particles[i];
+                p1.update();
+                p1.draw();
+                for (let j = i + 1; j < particles.length; j++) {
+                    const p2 = particles[j];
+                    const dist = Math.hypot(p1.x - p2.x, p1.y - p2.y);
+                    if (dist < connectionDistance) {
+                        const alpha = (1 - dist / connectionDistance) * 0.08;
+                        ctx.beginPath();
+                        ctx.moveTo(p1.x, p1.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.strokeStyle = `rgba(0, 229, 255, ${alpha})`;
+                        ctx.lineWidth = 0.6;
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animateCanvas);
+        }
+        animateCanvas();
+
+        window.addEventListener('resize', () => {
+            width = canvas.width = canvas.offsetWidth;
+            height = canvas.height = canvas.offsetHeight;
+        });
+
+        // ── Translation System ───────────────────────────
+        const langData = {
+            en: {
+                "nav.brandSubtitle": "IT & CYBERSECURITY PARTNER",
+                "nav.home": "Home",
+                "nav.whatWeSolve": "What We Solve",
+                "nav.costMatrix": "Risk Analysis",
+                "nav.solutions": "Solutions",
+                "nav.partner": "Partner Solutions",
+                "nav.whyUs": "Why Us",
+                "nav.requestConsult": "Request Consultation",
+                "hero.tag": "ENTERPRISE IT & CYBERSECURITY PARTNER",
+                "hero.subtitle": "A single hour of downtime costs up to ฿500,000 in lost revenue and customer trust. Mitigate operational risks with proactive server leasing, network renting, and unified 24/7 MA services.",
+                "hero.ctaConsult": "Request Consultation",
+                "hero.ctaSurvey": "Schedule Site Survey",
+                "hero.metrics.uptimeLabel": "Uptime Guarantee",
+                "hero.metrics.monitoringLabel": "Monitoring & Support",
+                "hero.metrics.activeVal": "24/7 Proactive MA",
+                "hero.metrics.regionLabel": "Coverage Focus",
+                "hero.metrics.regionVal": "Southern Thailand",
+                "solve.title": "Critical Business Risks We Mitigate",
+                "solve.subtitle": "The financial, legal, and operational damage of system failure is far greater than the cost of proactive prevention. We protect your business continuity.",
+                "solve.downtime.problem": "System Downtime",
+                "solve.downtime.solution": "High-Availability Redundancy",
+                "solve.downtime.impact": "฿500,000/hour in lost billing, stopped supply chain, and patient record delay.",
+                "solve.ransomware.problem": "Ransomware Attacks",
+                "solve.ransomware.solution": "Immutable Backups & Endpoint Shielding",
+                "solve.ransomware.impact": "฿3,000,000+ extortion demands, total database destruction, and brand trust ruin.",
+                "solve.dataloss.problem": "Data Loss Risks",
+                "solve.dataloss.solution": "Multi-tier Automated Backup Architecture",
+                "solve.dataloss.impact": "Loss of critical patient medical history, hospital compliance fines, and unrecoverable accounting records.",
+                "matrix.tag": "Financial Risk Analysis",
+                "matrix.title": "The Cost of Inaction vs. Proactive Protection",
+                "matrix.subtitle": "Investing in prevention costs a fraction of recovery. Emergency breakdown damage is exponentially higher.",
+                "matrix.risk.title": "Unprotected System (Reactive)",
+                "matrix.risk.item1.title": "Ransomware Ransom",
+                "matrix.risk.item1.desc": "Extortion payment with no guarantee of decryption.",
+                "matrix.risk.item2.title": "Operational Downtime",
+                "matrix.risk.item2.desc": "Factory halts, hospital HIS offline, unbilled service hours.",
+                "matrix.risk.item3.title": "Customer Lawsuits & Compliance",
+                "matrix.risk.item3.desc": "PDPA privacy breaches, hospital patient data leak fines.",
+                "matrix.risk.item4.title": "Reputational Trust Destruction",
+                "matrix.risk.item4.desc": "Loss of primary tier contracts, negative PR coverage.",
+                "matrix.risk.unmeasurable": "Unmeasurable",
+                "matrix.risk.total": "TOTAL LOSS EXCEEDING: ฿5,000,000+",
+                "matrix.protect.title": "Southern Enterprise Partner (Proactive)",
+                "matrix.protect.item1.title": "Server & Network Leasing (OPEX)",
+                "matrix.protect.item1.desc": "Hardware rental, zero upfront capital cost, continuous upgrades.",
+                "matrix.protect.fraction": "Fractional OPEX",
+                "matrix.protect.item2.title": "24/7 Monitored Cybersecurity & Firewall",
+                "matrix.protect.item2.desc": "Isolate threats immediately before they touch network endpoints.",
+                "matrix.protect.included": "Included in Service",
+                "matrix.protect.item3.title": "Immutable 3-2-1 Cloud Backup",
+                "matrix.protect.item3.desc": "Automatic air-gapped encryption. Restores in minutes if hit.",
+                "matrix.protect.item4.title": "Comprehensive MA SLA Agreements",
+                "matrix.protect.item4.desc": "Quick onsite response and hardware replacement in Southern region.",
+                "matrix.protect.predictable": "Predictable Cost",
+                "matrix.protect.total": "PREDICTABLE BUDGET: LESS THAN 5% OF TOTAL RISK LOSS",
+                "sol.title": "Enterprise Technology Solutions & Risk Mitigation",
+                "sol.subtitle": "Custom-architected IT solutions designed for scale, resilience, and reliability. Avoid massive financial damages with proactive infrastructure.",
+                "sol.banner.title": "Proactive Protection Center",
+                "sol.banner.desc": "Our regional security hub monitors all endpoints, preventing breaches before they disrupt your hospital patient services or factory supply lines.",
+                "sol.systems.title": "Enterprise Systems",
+                "sol.systems.desc": "End-to-end IT architecture design and system integration to streamline operations and prevent system bottlenecks.",
+                "sol.systems.item1": "Infrastructure Design",
+                "sol.systems.item2": "System Integration",
+                "sol.backup.title": "Backup & Recovery",
+                "sol.backup.desc": "Robust backup frameworks ensuring business continuity in every scenario. Remember: the cost of data loss dwarfs the cost of backup systems.",
+                "sol.backup.item1": "Backup Architecture",
+                "sol.backup.item2": "Disaster Recovery (DR)",
+                "sol.backup.item3": "Business Continuity",
+                "sol.compute.title": "Server & Compute",
+                "sol.compute.desc": "High-density virtualization, storage computing, and flexible Server Rental & Leasing options to optimize CAPEX.",
+                "sol.compute.item1": "Virtualization & Hypervisors",
+                "sol.compute.item2": "Server Rental & Leasing",
+                "sol.compute.item3": "High Availability Clusters",
+                "sol.security.title": "Cybersecurity",
+                "sol.security.desc": "Defending enterprise assets with proactive posture and modern security layers. A breach costs 10x more than prevention.",
+                "sol.security.item1": "Firewall & Zero Trust",
+                "sol.security.item2": "Endpoint Protection",
+                "sol.security.item3": "Monitoring & SOC Readiness",
+                "sol.network.title": "Network & Hardware Renting",
+                "sol.network.desc": "Secure, fast, and multi-site enterprise-grade network architectures. Rent core network devices to reduce setup costs.",
+                "sol.network.item1": "Core & Edge Networking",
+                "sol.network.item2": "Network Equipment Rental",
+                "sol.network.item3": "Enterprise Secure WiFi",
+                "sol.ma.title": "Unified MA Services",
+                "sol.ma.desc": "Comprehensive Maintenance Agreements (MA) across all systems. Stop paying for expensive emergency breakdown callouts.",
+                "sol.ma.item1": "24/7 Onsite Engineer SLA",
+                "sol.ma.item2": "Hardware Replacement Guarantee",
+                "sol.ma.item3": "Proactive System Health Checks",
+                "partner.badge": "Authorized Solution Partner",
+                "partner.title": "Solutions Delivered Together with NebulaSoft Enterprise",
+                "partner.subtitle": "Combining regional agility with world-class product design and enterprise engineering.",
+                "partner.archTitle": "INTEGRATED PROCUREMENT & DEPLOYMENT ARCHITECTURE",
+                "partner.step1.title": "Southern Clients",
+                "partner.step1.desc": "Hospitals, Factories, and Businesses request custom IT architectures.",
+                "partner.step2.title": "Regional Solution Partner",
+                "partner.step2.desc": "We audit, survey, and design the solution. We manage regional implementation.",
+                "partner.step3.title": "NebulaSoft HQ",
+                "partner.step3.desc": "Purchasing, hardware procurement, and formal invoicing are processed.",
+                "partner.recovery.title": "NebulaSoft Cloud Recovery",
+                "partner.recovery.desc": "Direct fiber synchronization between your Southern location and primary databases, ensuring instant disaster recovery failover.",
+                "partner.soft.title": "Enterprise Software",
+                "partner.soft.desc": "Centralized management tools, server OS, and corporate suites.",
+                "partner.wifi.title": "Wireless Access Points",
+                "partner.wifi.desc": "High-density secure enterprise WiFi hardware and managed cloud networks.",
+                "partner.server.title": "Server Platforms",
+                "partner.server.desc": "Highly-scalable computing hardware designed for continuous workload.",
+                "why.title": "Why Southern Organizations Trust Us",
+                "why.subtitle": "Combining local availability with enterprise standards to deliver unmatched service reliability.",
+                "why.pipe1.title": "Consult",
+                "why.pipe1.desc": "In-depth audit of current IT infrastructure and pain points.",
+                "why.pipe2.title": "Design",
+                "why.pipe2.desc": "Custom-architected solutions tailored to business and budgetary needs.",
+                "why.pipe3.title": "Deploy",
+                "why.pipe3.desc": "Seamless, zero-downtime execution and system integration.",
+                "why.pipe4.title": "Protect",
+                "why.pipe4.desc": "Active threat intelligence and cybersecurity monitoring.",
+                "why.pipe5.title": "Support",
+                "why.pipe5.desc": "24/7 responsive helpdesk and onsite local engineer dispatch.",
+                "why.val1.title": "Fast Response",
+                "why.val1.desc": "Onsite support in hours, not days, for Southern region organizations.",
+                "why.val2.title": "Enterprise Standards",
+                "why.val2.desc": "Deploying certified technologies compliant with ISO 27001 / NIST.",
+                "why.val3.title": "Regional Support",
+                "why.val3.desc": "Dedicated engineers stationed in Surat Thani, Chumphon, and Ranong.",
+                "why.val4.title": "Preventive Approach",
+                "why.val4.desc": "Proactive monitoring to fix faults before they disrupt your business.",
+                "why.val5.title": "Long-term Partner",
+                "why.val5.desc": "Supporting your IT scaling needs from small teams to multi-site campuses.",
+                "ind.title": "Industries We Support",
+                "ind.subtitle": "Tailored IT configurations designed for regulatory compliance, security, and high performance.",
+                "ind.health.title": "Healthcare & Hospitals",
+                "ind.health.desc": "HIS redundancy, PACS storage backup, PDPA/HIPAA compliance, and zero-downtime patient record access.",
+                "ind.factory.title": "Manufacturing & Factories",
+                "ind.factory.desc": "OT network segmentation, factory automation monitoring, ransomware shielding, and multi-site WAN.",
+                "ind.office.title": "Large Enterprise Offices",
+                "ind.office.desc": "Centralized server management, secure staff WiFi, Zero Trust remote work security, and hybrid cloud.",
+                "trust.title": "Designed for Confidence & Reliability",
+                "trust.subtitle": "Real numbers and client testimonials reflecting our commitment to enterprise excellence.",
+                "trust.stat1": "Projects Completed",
+                "trust.stat2": "Systems Protected",
+                "trust.stat3": "SLA Availability",
+                "trust.stat4": "Customer Satisfaction",
+                "trust.quote1": "\"Their team designed our entire hospital data redundancy system. During a power failure last month, the failover was so seamless that none of our clinical staff even noticed.\"",
+                "trust.author1": "Director of IT",
+                "trust.company1": "Regional Hospital Group, Surat Thani",
+                "trust.quote2": "\"After suffering a ransomware threat, we partnered with them for security hardening. Their NebulaSoft enterprise systems and local support saved us from massive financial loss.\"",
+                "trust.author2": "Operations Manager",
+                "trust.company2": "Leading Agro-export Factory, Chumphon",
+                "contact.title": "Let's Build a Resilient Infrastructure",
+                "contact.subtitle": "Consult with our enterprise architects or request a site survey in Southern Thailand.",
+                "form.name": "Full Name",
+                "form.email": "Corporate Email",
+                "form.phone": "Phone Number",
+                "form.org": "Organization Name",
+                "form.industry": "Select Industry",
+                "form.industryPlaceholder": "Select your industry...",
+                "form.ind1": "Healthcare & Hospital",
+                "form.ind2": "Manufacturing & Factory",
+                "form.ind3": "Enterprise Office",
+                "form.ind4": "Education",
+                "form.ind5": "Government Organization",
+                "form.message": "Message / Project Details",
+                "form.submit": "Submit Request",
+                "info.areaTitle": "Service Coverage Area",
+                "info.areaDesc": "Chumphon, Surat Thani, Ranong, Prachuap Khiri Khan, and Southern Thailand.",
+                "info.addressTitle": "Regional Office",
+                "info.addressDesc": "IT Solutions Center, Surat Thani City, 84000, Thailand",
+                "info.supportTitle": "Emergency Support",
+                "info.supportDesc": "24/7 Hotline: +66 (0) 77-XXX-XXX | support@southernenterprise.co.th",
+                "info.bookTitle": "Book a 15m Call",
+                "info.bookDesc": "Find open slots on our calendar",
+                "info.bookBtn": "Schedule",
+                "footer.rights": "© 2026 Southern Enterprise IT Solution Partner. All rights reserved.",
+                "footer.disclaimer": "Cooperative regional partner of NebulaSoft Enterprise. All enterprise purchases are invoiced through NebulaSoft corporate office."
+            },
+            th: {
+                "nav.brandSubtitle": "พันธมิตรระบบไอทีและไซเบอร์",
+                "nav.home": "หน้าแรก",
+                "nav.whatWeSolve": "ปัญหาที่แก้ไข",
+                "nav.costMatrix": "วิเคราะห์ความเสี่ยง",
+                "nav.solutions": "โซลูชัน",
+                "nav.partner": "ร่วมกับพันธมิตร",
+                "nav.whyUs": "ทำไมต้องเป็นเรา",
+                "nav.requestConsult": "ขอคำปรึกษาฟรี",
+                "hero.tag": "พันธมิตรระบบไอทีและไซเบอร์ซีคิวริตี้ระดับองค์กร",
+                "hero.subtitle": "ระบบล่มเพียง 1 ชั่วโมง อาจก่อความเสียหายทางการเงินและชื่อเสียงองค์กรกว่า 500,000 บาท ลดความเสี่ยงด้วยบริการเช่า Server เช่าอุปกรณ์ Network และบริการ MA ทุกระบบแบบ 24/7",
+                "hero.ctaConsult": "ขอคำปรึกษาฟรี",
+                "hero.ctaSurvey": "นัดสำรวจหน้างาน",
+                "hero.metrics.uptimeLabel": "การรับประกัน Uptime",
+                "hero.metrics.monitoringLabel": "การเฝ้าระวัง & ดูแล",
+                "hero.metrics.activeVal": "24/7 เชิงรุก MA",
+                "hero.metrics.regionLabel": "เน้นพื้นที่บริการ",
+                "hero.metrics.regionVal": "ภาคใต้ตอนบน",
+                "solve.title": "ความเสี่ยงวิกฤตที่เราดูแลป้องกัน",
+                "solve.subtitle": "ความเสียหายทางการเงิน กฎหมาย และการดำเนินงานของการละเลยระบบไอทีนั้นสูงกว่าค่าบริการป้องกันอย่างมหาศาล",
+                "solve.downtime.problem": "ระบบหยุดชะงัก (Downtime)",
+                "solve.downtime.solution": "ระบบสำรองทำงานทดแทนอัตโนมัติ (High-Availability)",
+                "solve.downtime.impact": "สูญเสียโอกาสทางธุรกิจกว่า ฿500,000 ต่อชั่วโมง โรงงานหยุดผลิต โรงพยาบาลเข้าถึงข้อมูลคนไข้ไม่ได้",
+                "solve.ransomware.problem": "การโจมตีจาก Ransomware",
+                "solve.ransomware.solution": "การสำรองข้อมูลแบบแก้ไขไม่ได้ (Immutable Backup)",
+                "solve.ransomware.impact": "ความเสียหายกว่า ฿3,000,000+ จากการขู่กรรโชก ข้อมูลสูญหายถาวร และสูญเสียความน่าเชื่อถืออย่างรุนแรง",
+                "solve.dataloss.problem": "ความเสี่ยงข้อมูลสูญหาย",
+                "solve.dataloss.solution": "สถาปัตยกรรมสำรองข้อมูลอัตโนมัติหลายระดับ",
+                "solve.dataloss.impact": "ข้อมูลประวัติผู้ป่วยสูญหาย โดนฟ้องร้องคดีความ พนักงานเข้าทำงานไม่ได้ และประวัติบัญชีย้อนหลังเสียหายหมดสิ้น",
+                "matrix.tag": "การวิเคราะห์ความเสี่ยงทางการเงิน",
+                "matrix.title": "เปรียบเทียบความเสียหายของการละเลย vs. การป้องกันเชิงรุก",
+                "matrix.subtitle": "การลงทุนเพื่อป้องกันมีราคาเพียงเสี้ยวเดียวของความเสียหายเมื่อระบบหลักเกิดการพังทลายลง",
+                "matrix.risk.title": "เมื่อไม่ได้ทำระบบป้องกัน (ตั้งรับ)",
+                "matrix.risk.item1.title": "การเรียกค่าไถ่ Ransomware",
+                "matrix.risk.item1.desc": "ค่าใช้จ่ายจ่ายเงินกู้ระบบที่ไม่มีวันสิ้นสุด และไม่รับประกันการได้ข้อมูลคืน",
+                "matrix.risk.item2.title": "ค่าเสียหายเมื่อระบบหยุดชะงัก",
+                "matrix.risk.item2.desc": "สายการผลิตโรงงานหยุดทำงาน โรงพยาบาลเปิดระบบ HIS ไม่ได้ ขาดรายได้สะสม",
+                "matrix.risk.item3.title": "คดีความฟ้องร้องและการปรับ PDPA",
+                "matrix.risk.item3.desc": "ข้อมูลลูกค้ารั่วไหล ข้อมูลแพทย์คนไข้หลุดสู่ภายนอก โดนโทษปรับตามกฎหมาย",
+                "matrix.risk.item4.title": "ความเสียหายต่อความเชื่อมั่นองค์กร",
+                "matrix.risk.item4.desc": "ลูกค้าสูญเสียความเชื่อมั่น ยกเลิกสัญญาระยะยาว เสียชื่อเสียงองค์กร",
+                "matrix.risk.unmeasurable": "ไม่สามารถประเมินค่าได้",
+                "matrix.risk.total": "มูลค่าความเสียหายรวมสูงกว่า: ฿5,000,000+",
+                "matrix.protect.title": "ร่วมมือกับ Southern Enterprise (เชิงรุก)",
+                "matrix.protect.item1.title": "บริการเช่า Server & อุปกรณ์ Network (OPEX)",
+                "matrix.protect.item1.desc": "ไม่มีงบลงทุนตั้งต้น ประหยัด CAPEX เปลี่ยนอุปกรณ์ทันสมัยได้ตลอดเวลา",
+                "matrix.protect.fraction": "จ่ายรายเดือนประหยัด",
+                "matrix.protect.item2.title": "ระบบความปลอดภัยไซเบอร์เฝ้าระวัง 24/7",
+                "matrix.protect.item2.desc": "บล็อกภัยคุกคามก่อนที่จะเจาะเข้าสู่เครือข่ายภายในอย่างแม่นยำ",
+                "matrix.protect.included": "รวมอยู่ในบริการแล้ว",
+                "matrix.protect.item3.title": "การสำรองข้อมูลแบบเข้ารหัสแก้ไขไม่ได้ 3-2-1",
+                "matrix.protect.item3.desc": "กู้ระบบกลับมาทำงานปกติได้ในเวลาอันสั้น มั่นใจข้อมูลไม่สูญหาย",
+                "matrix.protect.item4.title": "สัญญาบริการซ่อมบำรุง MA ครบวงจร",
+                "matrix.protect.item4.desc": "ตอบสนองด่วนถึงหน้างานพร้อมอะไหล่ทดแทนในเขตภาคใต้",
+                "matrix.protect.predictable": "ควบคุมงบประมาณได้",
+                "matrix.protect.total": "งบประมาณระบบป้องกัน: น้อยกว่า 5% ของมูลค่าความเสียหายเมื่อระบบพัง",
+                "sol.title": "โซลูชันเทคโนโลยีและการป้องกันความเสี่ยงระดับองค์กร",
+                "sol.subtitle": "ออกแบบและวางระบบโครงสร้างพื้นฐานไอทีเพื่อความยืดหยุ่น ปลอดภัย และป้องกันความเสียหายที่มูลค่าสูงเกินกว่าการป้องกันล่วงหน้า",
+                "sol.banner.title": "ศูนย์เฝ้าระวังและป้องกันภัยไซเบอร์เชิงรุก",
+                "sol.banner.desc": "วิศวกรผู้เชี่ยวชาญในภาคใต้ของเราพร้อมเฝ้าระวังและป้องกันภัยไซเบอร์ 24/7 เพื่อให้มั่นใจว่าโรงพยาบาลและโรงงานของคุณจะดำเนินงานได้อย่างไม่มีวันหยุดชะงัก",
+                "sol.systems.title": "ระบบโครงสร้างพื้นฐานองค์กร",
+                "sol.systems.desc": "ออกแบบสถาปัตยกรรมไอทีและบูรณาการระบบครบวงจร เพื่อการทำงานที่เป็นหนึ่งเดียวและไร้คอขวด",
+                "sol.systems.item1": "ออกแบบโครงสร้างพื้นฐานไอที",
+                "sol.systems.item2": "การรวมระบบและแอปพลิเคชัน",
+                "sol.backup.title": "ระบบสำรองข้อมูลและกู้คืน",
+                "sol.backup.desc": "วางระบบสำรองข้อมูลประสิทธิภาพสูง เพื่อรองรับการกู้คืนในทุกสถานการณ์วิกฤต เพราะการกู้ระบบย้อนหลังมีราคาแพงกว่าระบบสำรองมาก",
+                "sol.backup.item1": "สถาปัตยกรรมสำรองข้อมูล",
+                "sol.backup.item2": "กู้คืนระบบจากภัยพิบัติ (DR)",
+                "sol.backup.item3": "แผนประคองความต่อเนื่องธุรกิจ (BCP)",
+                "sol.compute.title": "ระบบเซิร์ฟเวอร์และการประมวลผล",
+                "sol.compute.desc": "ระบบ Virtualization, หน่วยเก็บข้อมูลความหนาแน่นสูง และ บริการเช่าเซิร์ฟเวอร์ (Server Rental) เพื่อควบคุม CAPEX",
+                "sol.compute.item1": "ระบบจำลองเซิร์ฟเวอร์ (Virtualization)",
+                "sol.compute.item2": "บริการเช่าเซิร์ฟเวอร์องค์กร (Server Leasing)",
+                "sol.compute.item3": "ระบบคลัสเตอร์ความพร้อมใช้งานสูง (HA)",
+                "sol.security.title": "ระบบความปลอดภัยไซเบอร์",
+                "sol.security.desc": "ปกป้องสินทรัพย์ข้อมูลด้วยเทคโนโลยีการป้องกันเชิงรุก ความเสียหายหากถูกเจาะระบบมีราคาสูงกว่าค่าป้องกันถึง 10 เท่า",
+                "sol.security.item1": "ไฟร์วอลล์และ Zero Trust",
+                "sol.security.item2": "ระบบป้องกันเครื่องลูกข่าย (EDR/XDR)",
+                "sol.security.item3": "การเฝ้าระวังและการเตรียมความพร้อม SOC",
+                "sol.network.title": "ระบบเครือข่ายและเช่าอุปกรณ์",
+                "sol.network.desc": "ระบบเชื่อมโยงสาขาและบริการเช่าอุปกรณ์เครือข่าย (Network Leasing) สำหรับองค์กรที่ต้องการประหยัดงบลงทุนก้อนแรก",
+                "sol.network.item1": "ระบบเครือข่ายแกนหลัก (Core Network)",
+                "sol.network.item2": "บริการเช่าอุปกรณ์เครือข่าย (Network Rental)",
+                "sol.network.item3": "ระบบ WiFi องค์กรความปลอดภัยสูง",
+                "sol.ma.title": "บริการ MA ดูแลทุกระบบ",
+                "sol.ma.desc": "สัญญาบริการซ่อมบำรุงดูแล (Maintenance Agreement) ครอบคลุมระบบไอทีทั้งหมดขององค์กร ป้องกันความเสียหายก่อนจะขยายวงกว้าง",
+                "sol.ma.item1": "วิศวกร Onsite ตาม SLA 24/7",
+                "sol.ma.item2": "รับประกันอะไหล่ทดแทนเครื่องสำรอง",
+                "sol.ma.item3": "ตรวจเช็กสุขภาพระบบเชิงป้องกันประจำเดือน",
+                "partner.badge": "พันธมิตรบริการอย่างเป็นทางการ",
+                "partner.title": "โซลูชันที่พัฒนาร่วมกับ NebulaSoft Enterprise",
+                "partner.subtitle": "ผสานความคล่องตัวในการบริการระดับท้องถิ่นเข้ากับโซลูชันเทคโนโลยีมาตรฐานระดับโลก",
+                "partner.archTitle": "สถาปัตยกรรมการจัดซื้อและการติดตั้งระบบร่วมกัน",
+                "partner.step1.title": "ลูกค้าในเขตภาคใต้",
+                "partner.step1.desc": "โรงพยาบาล โรงงาน และองค์กร ยื่นความประสงค์ระบบไอทีเฉพาะตัว",
+                "partner.step2.title": "พันธมิตรบริการในพื้นที่ (เรา)",
+                "partner.step2.desc": "เราดำเนินการสำรวจ วางระบบ และเป็นทีมติดตั้งดูแลหน้างานทั้งหมด",
+                "partner.step3.title": "สำนักงานใหญ่ NebulaSoft",
+                "partner.step3.desc": "ดำเนินการจัดซื้อ สิทธิ์ซอฟต์แวร์ และออกใบกำกับภาษีโดยตรงปลอดภัย",
+                "partner.recovery.title": "ระบบสำรองภัยพิบัติ NebulaSoft Cloud",
+                "partner.recovery.desc": "เชื่อมโยงและซิงค์ข้อมูลผ่านสายสัญญาณความเร็วสูง เพื่อให้พร้อมสลับระบบกู้ภัยพิบัติทันทีที่เซิร์ฟเวอร์หลักล่มสลาย",
+                "partner.soft.title": "ซอฟต์แวร์ระบบองค์กร",
+                "partner.soft.desc": "ระบบควบคุมส่วนกลาง ระบบปฏิบัติการ และชุดโปรแกรมบริหารจัดการระดับสูง",
+                "partner.wifi.title": "อุปกรณ์กระจายสัญญาณ WiFi AP",
+                "partner.wifi.desc": "ฮาร์ดแวร์ WiFi ความหนาแน่นสูง จัดการผ่านคลาวด์ที่ปลอดภัยและเสถียร",
+                "partner.server.title": "แพลตฟอร์มเซิร์ฟเวอร์หลัก",
+                "partner.server.desc": "ฮาร์ดแวร์เซิร์ฟเวอร์ประสิทธิภาพสูง รองรับระบบงานหนัก 24 ชั่วโมงต่อวัน",
+                "why.title": "เหตุผลที่องค์กรในภาคใต้เลือกเรา",
+                "why.subtitle": "ผสานทีมสนับสนุนหน้างานด่วนในพื้นที่เข้ากับมาตรฐานไอทีระดับสากลเพื่อการบริการที่ไร้ขีดจำกัด",
+                "why.pipe1.title": "ประเมินความต้องการ",
+                "why.pipe1.desc": "ตรวจสอบและวิเคราะห์โครงสร้างไอทีเดิมและจุดเสี่ยงอย่างละเอียด",
+                "why.pipe2.title": "ออกแบบระบบ",
+                "why.pipe2.desc": "วางแผนสถาปัตยกรรมและโซลูชันที่เหมาะสมกับความต้องการและงบประมาณ",
+                "why.pipe3.title": "เริ่มติดตั้งระบบ",
+                "why.pipe3.desc": "ดำเนินการลงระบบและทดสอบอย่างระมัดระวัง ไม่กระทบเวลาทำงานปกติ",
+                "why.pipe4.title": "เฝ้าระวังป้องกัน",
+                "why.pipe4.desc": "ระบบรักษาความปลอดภัย ตรวจจับ และแจ้งเตือนภัยไซเบอร์เชิงรุก",
+                "why.pipe5.title": "ดูแลต่อเนื่อง",
+                "why.pipe5.desc": "ศูนย์บริการดูแลด่วน และส่งวิศวกรเข้าประเมินหน้างานกรณีฉุกเฉิน",
+                "why.val1.title": "ตอบสนองรวดเร็ว",
+                "why.val1.desc": "เข้าแก้ไขด่วนถึงหน้างานภายในเวลาไม่กี่ชั่วโมงในพื้นที่ภาคใต้ตอนบน",
+                "why.val2.title": "มาตรฐานองค์กร",
+                "why.val2.desc": "เลือกใช้เทคโนโลยีมาตรฐานสากลที่ผ่านการรับรองความปลอดภัย ISO/NIST",
+                "why.val3.title": "ทีมสนับสนุนในพื้นที่",
+                "why.val3.desc": "มีวิศวกรและอุปกรณ์สำรองประจำการที่สุราษฎร์ธานี ชุมพร ระนอง",
+                "why.val4.title": "เน้นการป้องกันเชิงรุก",
+                "why.val4.desc": "ตรวจวิเคราะห์เพื่อดักฟอลต์ระบบก่อนจะส่งผลเสียหายต่อธุรกิจ",
+                "why.val5.title": "พันธมิตรระยะยาว",
+                "why.val5.desc": "พร้อมเคียงข้างดูแลขยายระบบเครือข่ายเมื่อองค์กรมีสาขาเพิ่มขึ้น",
+                "ind.title": "กลุ่มอุตสาหกรรมที่เราให้บริการ",
+                "ind.subtitle": "ออกแบบเฉพาะเพื่อรองรับกฎระเบียบ ความปลอดภัย และประสิทธิภาพในแต่ละอุตสาหกรรม",
+                "ind.health.title": "กลุ่มโรงพยาบาล & สาธารณสุข",
+                "ind.health.desc": "ระบบ HIS สองระบบสำรอง, สำรองข้อมูลภาพ PACS, ปลอดภัยตาม PDPA/HIPAA และการเข้าถึงประวัติคนไข้ไม่สะดุด",
+                "ind.factory.title": "กลุ่มโรงงาน & อุตสาหกรรม",
+                "ind.factory.desc": "แบ่งเซกเมนต์เครือข่ายโรงงาน (OT Security), ป้องกันการหยุดทำงานของเครื่องจักร และบล็อกภัยคุกคามไซเบอร์",
+                "ind.office.title": "สำนักงานและบริษัทใหญ่",
+                "ind.office.desc": "ระบบควบคุมศูนย์กลาง, WiFi ที่เสถียรสำหรับพนักงานจำนวนมาก, ความปลอดภัยทำงานนอกสถานที่ Zero Trust",
+                "trust.title": "ออกแบบเพื่อความน่าเชื่อถือและความปลอดภัยสูงสุด",
+                "trust.subtitle": "ผลงานจริงและคำยืนยันจากผู้บริหารองค์กรสะท้อนความไว้วางใจในการทำงานร่วมกัน",
+                "trust.stat1": "โครงการที่สำเร็จแล้ว",
+                "trust.stat2": "ระบบเครือข่ายองค์กรที่ดูแล",
+                "trust.stat3": "การรับประกันเวลาทำงานระบบ",
+                "trust.stat4": "ความพึงพอใจของลูกค้า",
+                "trust.quote1": "\"ทีมงานออกแบบและติดตั้งระบบสำรองข้อมูลให้กับโรงพยาบาลของเราอย่างดีเยี่ยม ตอนระบบไฟฟ้าในพื้นที่ขัดข้อง ระบบสำรองทำหน้าที่แทนได้ทันทีโดยไม่กระทบต่อผู้ป่วย\"",
+                "trust.author1": "ผู้อำนวยการฝ่ายสารสนเทศ",
+                "trust.company1": "เครือโรงพยาบาลจังหวัด, สุราษฎร์ธานี",
+                "trust.quote2": "\"หลังจากถูก Ransomware โจมตี เราได้ร่วมงานกับทีมนี้เพื่ออุดรอยรั่วและยกระดับความปลอดภัย โซลูชัน NebulaSoft และช่างในพื้นที่ช่วยเราได้มาก\"",
+                "trust.author2": "ผู้จัดการฝ่ายปฏิบัติการ",
+                "trust.company2": "โรงงานแปรรูปสินค้าเกษตรส่งออก, ชุมพร",
+                "contact.title": "มาร่วมสร้างระบบไอทีที่มั่นคงปลอดภัยร่วมกัน",
+                "contact.subtitle": "ติดต่อปรึกษากับวิศวกรผู้ออกแบบระบบองค์กร หรือขอนัดทีมเข้าสำรวจหน้างานฟรีในภาคใต้",
+                "form.name": "ชื่อ-นามสกุล",
+                "form.email": "อีเมลองค์กร",
+                "form.phone": "เบอร์โทรศัพท์",
+                "form.org": "ชื่อบริษัท / องค์กร",
+                "form.industry": "ประเภทกลุ่มธุรกิจ",
+                "form.industryPlaceholder": "โปรดเลือกประเภทกลุ่มธุรกิจ...",
+                "form.ind1": "กลุ่มโรงพยาบาล / สาธารณสุข",
+                "form.ind2": "กลุ่มโรงงาน / การผลิต",
+                "form.ind3": "บริษัทขนาดใหญ่ / สำนักงาน",
+                "form.ind4": "การศึกษา / โรงเรียน / มหาวิทยาลัย",
+                "form.ind5": "หน่วยงานราชการ",
+                "form.message": "รายละเอียดโครงการ / ข้อความที่ต้องการติดต่อ",
+                "form.submit": "ส่งคำขอข้อมูล",
+                "info.areaTitle": "พื้นที่ให้บริการหลักของเรา",
+                "info.areaDesc": "ครอบคลุม ชุมพร, สุราษฎร์ธานี, ระนอง, ประจวบคีรีขันธ์ และพื้นที่ภาคใต้ตอนบนอย่างทั่วถึงพร้อมบริการถึงที่อย่างรวดเร็ว",
+                "info.addressTitle": "สำนักงานสาขาภาคใต้",
+                "info.addressDesc": "ศูนย์บริการไอทีครบวงจร อำเภอเมืองสุราษฎร์ธานี จังหวัดสุราษฎร์ธานี 84000 ประเทศไทย",
+                "info.supportTitle": "บริการช่วยเหลือด่วน",
+                "info.supportDesc": "สายด่วนดูแลระบบ 24/7: +66 (0) 77-XXX-XXX | support@southernenterprise.co.th",
+                "info.bookTitle": "จองเวลากับวิศวกร 15 นาที",
+                "info.bookDesc": "เลือกเวลาปรึกษาระบบเบื้องต้นผ่านระบบปฏิทิน",
+                "info.bookBtn": "นัดหมายล่วงหน้า",
+                "footer.rights": "© 2026 Southern Enterprise IT Solution Partner. สงวนลิขสิทธิ์ทั้งหมด.",
+                "footer.disclaimer": "พันธมิตรความร่วมมือระดับภูมิภาคของ NebulaSoft Enterprise ซื้อผลิตภัณฑ์ สิทธิ์การใช้งาน และออกใบกำกับภาษีอย่างเป็นทางการผ่านสำนักงานใหญ่ NebulaSoft"
+            }
+        };
+
+        let currentLang = 'th';
+
+        function toggleLang() {
+            currentLang = currentLang === 'th' ? 'en' : 'th';
+            document.getElementById('lang-btn-text').innerText = currentLang === 'th' ? 'EN' : 'TH';
+            
+            document.querySelectorAll('[data-t]').forEach(elem => {
+                const key = elem.getAttribute('data-t');
+                if (langData[currentLang][key]) {
+                    elem.innerText = langData[currentLang][key];
+                }
+            });
+
+            const heroTitle = document.getElementById('hero-title');
+            if (currentLang === 'th') {
+                heroTitle.innerHTML = 'ปกป้อง. เพิ่มประสิทธิภาพ.<br><span class="gradient-text text-glow">ขับเคลื่อนธุรกิจอย่างไม่สะดุด.</span>';
+            } else {
+                heroTitle.innerHTML = 'Protect. Optimize.<br><span class="gradient-text text-glow">Keep Your Business Running.</span>';
+            }
+
+            const placeholder = document.querySelector('[data-t="form.industryPlaceholder"]');
+            if (placeholder) placeholder.text = langData[currentLang]["form.industryPlaceholder"];
+
+            const procNote = document.getElementById('procurement-note');
+            if (procNote) {
+                procNote.innerText = currentLang === 'en' 
+                    ? '*Note: Product procurement, licensing, and formal invoicing are processed securely via NebulaSoft Headquarters purchasing workflow.' 
+                    : '*หมายเหตุ: การจัดซื้อผลิตภัณฑ์ สิทธิ์การใช้งานซอฟต์แวร์ และการวางบิลจะดำเนินการผ่านกระบวนการจัดซื้อของสำนักงานใหญ่ NebulaSoft Enterprise';
+            }
+        }
+
+        // Initialize to Thai
+        toggleLang(); toggleLang();
+
+        // ── Contact form handling ────────────────────────
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            const form = document.getElementById('contact-form');
+            const submitBtnText = form.querySelector('button[type="submit"] span');
+            if (submitBtnText) submitBtnText.innerText = currentLang === 'en' ? 'Sending...' : 'กำลังส่งข้อความ...';
+            
+            setTimeout(() => {
+                form.innerHTML = `
+                    <div class="py-16 text-center flex flex-col items-center gap-5">
+                        <div class="w-20 h-20 rounded-full bg-gradient-to-br from-accent-cyan/20 to-accent-blue/10 border border-accent-cyan/25 flex items-center justify-center text-accent-cyan mb-4">
+                            <i data-lucide="check" class="w-10 h-10 stroke-[2.5]"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-white uppercase tracking-wider">
+                            ${currentLang === 'en' ? 'REQUEST RECEIVED' : 'ได้รับข้อมูลแล้ว'}
+                        </h3>
+                        <p class="text-sm text-white/50 max-w-md leading-relaxed">
+                            ${currentLang === 'en' ? 'Thank you! Our engineer will contact you shortly.' : 'ขอบคุณที่ติดต่อเรา! ทีมวิศวกรผู้เชี่ยวชาญจะติดต่อคุณกลับอย่างรวดเร็วที่สุด'}
+                        </p>
+                    </div>
+                `;
+                lucide.createIcons();
+            }, 1200);
+        }
+
+        // ── GSAP ScrollTrigger Animations ────────────────
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Animate sections on scroll
+        document.querySelectorAll('section').forEach(sec => {
+            gsap.from(sec.querySelectorAll('.glass-card, .glass, .hero-image-container'), {
+                scrollTrigger: {
+                    trigger: sec,
+                    start: "top 85%",
+                    toggleActions: "play none none none"
+                },
+                opacity: 0,
+                y: 40,
+                duration: 0.8,
+                stagger: 0.1,
+                ease: "power3.out"
+            });
+        });
+
+        // Animate section headings
+        document.querySelectorAll('section h2').forEach(h2 => {
+            gsap.from(h2, {
+                scrollTrigger: {
+                    trigger: h2,
+                    start: "top 90%",
+                    toggleActions: "play none none none"
+                },
+                opacity: 0,
+                y: 25,
+                duration: 0.7,
+                ease: "power2.out"
+            });
+        });
+
+        // Counter animation
+        const counters = document.querySelectorAll('.counter');
+        counters.forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-count'));
+            if (!target) return;
+            
+            ScrollTrigger.create({
+                trigger: counter,
+                start: "top 90%",
+                onEnter: () => {
+                    gsap.to(counter, {
+                        duration: 2,
+                        ease: "power2.out",
+                        onUpdate: function() {
+                            const progress = this.progress();
+                            const current = Math.round(target * progress);
+                            counter.innerText = current.toLocaleString() + '+';
+                        }
+                    });
+                },
+                once: true
+            });
+        });
+    </script>
+
+</body>
+</html>
